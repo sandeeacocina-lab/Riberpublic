@@ -237,6 +237,6 @@ header{background:var(--navy)}
 const h=document.querySelector('header'),s=()=>h.classList.toggle('scrolled',scrollY>40);s();addEventListener('scroll',s,{passive:true});
 const b=document.getElementById('burger'),m=document.getElementById('menu');
 if(b){b.addEventListener('click',()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>m.classList.remove('open')))}
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:0,rootMargin:'0px 0px 120px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));var _rsweep=function(){var vh=innerHeight;document.querySelectorAll('.reveal:not(.in)').forEach(function(el){if(el.getBoundingClientRect().top<vh*1.15){el.classList.add('in');io.unobserve(el);}});};addEventListener('scroll',_rsweep,{passive:true});addEventListener('load',_rsweep);
 </script></body></html>
