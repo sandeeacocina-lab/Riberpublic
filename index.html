@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Riberpublic SLS — Marketing &amp; merchandising sostenible</title><meta name="description" content="Empresa simulada de venta de merchandising. IES Ribera de Castilla. Proyecto SEFED. Deja huella sin dejar residuos."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--navy:#1c3a5e;--navy-deep:#132a47;--navy-mid:#2d5481;--blue:#5e80aa;--mist:#eef2f7;
+--paper:#fbfcfe;--violet:#5a47b8;--white:#fff;--ink:#16314f;--muted:#6b7e95;--line:#d8e1ec;--maxw:1200px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:"Manrope",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:800;line-height:1.05;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-weight:600;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:9px;border-radius:44px;padding:14px 30px;font-weight:600;font-size:.92rem;transition:.25s;cursor:pointer;border:1.5px solid transparent}
+.btn-solid{background:var(--white);color:var(--navy)}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.28)}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-mid)}
+.arrow{width:16px;height:16px}
+header{position:sticky;top:0;z-index:50;background:rgba(28,58,94,0);transition:background .3s,box-shadow .3s}
+header.scrolled{background:var(--navy);box-shadow:0 6px 30px rgba(19,42,71,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;color:#fff}
+.brand img{height:44px;width:auto}
+.menu{display:flex;align-items:center;gap:30px;list-style:none}
+.menu a{font-size:.82rem;font-weight:600;letter-spacing:.03em;opacity:.92;position:relative;padding:4px 0}
+.menu a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:#fff;transition:width .25s}
+.menu a:hover::after,.menu a.active::after{width:100%}
+.menu a.active{opacity:1}
+.nav .cta{border:1.5px solid rgba(255,255,255,.55);border-radius:40px;padding:9px 22px;font-size:.82rem;font-weight:600;color:#fff;transition:.25s}
+.nav .cta:hover{background:#fff;color:var(--navy);border-color:#fff}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:6px}
+.burger svg{width:26px;height:26px}
+.hero{position:relative;color:#fff;overflow:hidden;margin-top:-78px;padding-top:78px;min-height:92vh;display:flex;align-items:center;
+background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 48%,var(--navy-mid) 100%)}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,22,38,.95),rgba(11,22,38,.62) 52%,rgba(11,22,38,.30));z-index:1}
+.hero-inner{position:relative;z-index:2;width:100%}
+.hero-copy{max-width:560px;padding:64px 0}
+.hero::before{content:"";position:absolute;top:0;left:0;width:240px;height:240px;background:linear-gradient(135deg,var(--violet),transparent 70%);opacity:.55;clip-path:polygon(0 0,100% 0,0 100%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;min-height:80vh;padding-top:60px;padding-bottom:80px}
+.hero-grid>*{min-width:0}
+.hero .eyebrow{color:#9db6d4}
+.hero h1{font-size:clamp(2.5rem,6.4vw,5rem);margin:18px 0 6px}
+.hero h1 .amp{font-style:italic;font-weight:500;color:#aebfd6}
+.hero .tagline{font-size:clamp(1.05rem,2.4vw,1.4rem);font-weight:400;color:#d6e0ee;max-width:34ch;margin-bottom:34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-art{display:flex;justify-content:center;align-items:center;position:relative}
+.hero-art img{width:min(380px,82%);filter:drop-shadow(0 20px 50px rgba(0,0,0,.4))}
+.vurl{position:absolute;right:6px;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-size:.68rem;letter-spacing:.34em;font-weight:600;color:rgba(255,255,255,.5)}
+.page-hero{position:relative;color:#fff;overflow:hidden;margin-top:-78px;padding:152px 0 70px;
+background:radial-gradient(120% 130% at 82% 8%,rgba(94,128,170,.4),transparent 55%),linear-gradient(135deg,var(--navy-deep),var(--navy) 55%,var(--navy-mid))}
+.page-hero::before{content:"";position:absolute;top:0;left:0;width:200px;height:200px;background:linear-gradient(135deg,var(--violet),transparent 70%);opacity:.5;clip-path:polygon(0 0,100% 0,0 100%)}
+.page-hero .eyebrow{color:#9db6d4}
+.page-hero h1{font-size:clamp(2.4rem,6vw,3.9rem);margin:14px 0 12px}
+.page-hero p{color:#d6e0ee;max-width:60ch;font-size:1.05rem}
+.breadcrumb{font-size:.78rem;color:#9db6d4;margin-top:20px;letter-spacing:.03em}
+.breadcrumb a{color:#cfe0f2}
+section{padding:92px 0}
+.sec-head{max-width:680px;margin-bottom:50px}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3.1rem);margin:14px 0 0}
+.sec-head p{color:var(--muted);margin-top:14px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+.lead{font-size:1.12rem;color:var(--ink);max-width:66ch}
+.prose p{color:#42566e;margin-bottom:16px;max-width:68ch}
+.lema{font-family:"Playfair Display";font-style:italic;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--navy);text-align:center;margin:30px auto;max-width:20ch}
+.alt{background:var(--mist)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(28,58,94,.14);border-color:transparent}
+.duo{position:relative;aspect-ratio:4/3;background:linear-gradient(140deg,var(--navy),var(--navy-mid));overflow:hidden}
+.duo .illus{position:absolute;inset:0;width:100%;height:100%}
+.duo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(19,42,71,.4));pointer-events:none}
+.card-body{padding:26px 26px 30px}
+.card-body h3{font-size:1.4rem;margin-bottom:10px;color:var(--ink)}
+.card-body p{color:var(--muted);font-size:.95rem}
+.card-num{font-family:"Playfair Display";font-style:italic;color:var(--blue)}
+.shop{background:var(--navy-deep);color:#fff;text-align:center;position:relative;overflow:hidden}
+.shop .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.shop::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(19,42,71,.82),rgba(28,58,94,.55))}
+.shop .wrap{position:relative;z-index:2}
+.shop .eyebrow{color:#cfe0f2}
+.shop h2{font-size:clamp(2.2rem,5vw,3.4rem);margin:16px auto 30px;max-width:20ch}
+.seed-divider{display:flex;justify-content:center;margin-bottom:8px;color:rgba(255,255,255,.7)}
+.seed-divider svg{width:64px}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:46px}
+.stat{border-top:2px solid var(--navy);padding-top:24px}
+.stat .num{font-family:"Playfair Display";font-weight:900;font-size:clamp(3rem,7vw,5rem);color:var(--navy);line-height:1}
+.stat .num small{font-size:.42em;font-weight:700;margin-left:6px;color:var(--blue)}
+.stat h3{font-size:1.1rem;color:var(--ink);margin:6px 0 12px;font-family:"Manrope";font-weight:700}
+.stat p{color:var(--muted);font-size:.92rem}
+.rsc{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.rsc .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.rsc .eyebrow{color:#9db6d4}
+.rsc h2{font-size:clamp(2rem,4.4vw,3rem);margin:14px 0 22px}
+.rsc p{color:#cfdbea;margin-bottom:18px;max-width:50ch}
+.rsc-visual{display:flex;justify-content:center}
+.rsc-visual svg{width:min(360px,90%);color:rgba(255,255,255,.85)}
+.rev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px 30px 26px}
+.stars{color:#e7b53c;letter-spacing:3px;margin-bottom:14px}
+.rev blockquote{font-family:"Playfair Display";font-style:italic;font-size:1.1rem;color:var(--ink);line-height:1.5;margin-bottom:18px}
+.rev .who{font-size:.85rem;color:var(--muted)}
+.rev .who b{color:var(--navy);font-weight:700;display:block}
+/* team */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.member{text-align:center}
+.avatar{width:108px;height:108px;border-radius:50%;margin:0 auto 14px;overflow:hidden;background:linear-gradient(140deg,var(--navy),var(--navy-mid));color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display";font-weight:800;font-size:2rem;border:2px solid var(--blue)}
+.avatar svg{width:100%;height:100%;display:block}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.member h3{font-size:1.15rem;color:var(--ink)}
+.member span{font-size:.84rem;color:var(--muted)}
+/* quotes */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.quote{background:#fff;border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:12px;padding:26px}
+.quote p{font-family:"Playfair Display";font-style:italic;font-size:1.08rem;color:var(--ink);margin-bottom:12px;line-height:1.4}
+.quote cite{font-size:.82rem;color:var(--blue);font-weight:600;font-style:normal;letter-spacing:.04em}
+/* qué hacemos list */
+.do-list{list-style:none;display:grid;gap:14px;max-width:760px}
+.do-list li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;color:#42566e}
+.do-list .dot{flex:none;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700}
+/* services priced */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(28,58,94,.14);border-color:transparent}
+.svc .duo{aspect-ratio:16/9}
+.svc .duo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.svc-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.svc .code{font-size:.7rem;letter-spacing:.16em;color:var(--blue);font-weight:700;text-transform:uppercase}
+.svc h3{font-size:1.25rem;color:var(--ink);margin:6px 0}
+.svc .price{font-family:"Playfair Display";font-weight:800;font-size:1.7rem;color:var(--navy);margin:2px 0 12px}
+.svc p{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+.svc .buy{margin-top:auto;justify-content:center}
+/* products */
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.prod{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.prod:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(28,58,94,.13);border-color:transparent}
+.prod .thumb{aspect-ratio:1/1;position:relative;background:linear-gradient(140deg,var(--navy),var(--navy-mid));overflow:hidden}
+.prod .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.prod .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,.72)}
+.prod .ph svg{width:52px;margin-bottom:8px}
+.prod .ph b{font-size:.72rem;letter-spacing:.16em}
+.prod-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
+.prod .code{font-size:.66rem;letter-spacing:.14em;color:var(--blue);font-weight:700}
+.prod h3{font-size:1rem;color:var(--ink);margin:4px 0 6px;line-height:1.25;font-family:"Manrope";font-weight:700}
+.prod p{color:var(--muted);font-size:.82rem;margin-bottom:12px;flex:1}
+.prod .price{font-family:"Playfair Display";font-weight:800;color:var(--navy);font-size:1.2rem;margin-bottom:10px}
+.prod .buy{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--navy);color:#fff;border-radius:9px;padding:10px;font-weight:600;font-size:.82rem;transition:.2s}
+.prod .buy:hover{background:var(--navy-mid)}
+.featured{background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:#fff;border-radius:20px;padding:48px;text-align:center;position:relative;overflow:hidden}
+.featured .eyebrow{color:#9db6d4}
+.featured h3{font-size:clamp(1.7rem,3.4vw,2.3rem);margin:10px 0 14px}
+.featured p{color:#d6e0ee;max-width:64ch;margin:0 auto 22px}
+.sost{background:#fff;border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:14px;padding:28px 30px;margin-bottom:46px}
+.sost p{color:#42566e;margin-bottom:10px}
+.sost b{color:var(--navy)}
+/* asg */
+.asg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.asg{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px;border-top:3px solid var(--blue)}
+.asg .ico{width:46px;height:46px;color:var(--navy);margin-bottom:14px}
+.asg h3{font-size:1.3rem;color:var(--navy);margin-bottom:10px}
+.asg p{color:var(--muted);font-size:.94rem}
+/* blog */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.post{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.post:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(28,58,94,.14);border-color:transparent}
+.post .thumb{position:relative;aspect-ratio:16/10;background:linear-gradient(140deg,var(--navy),var(--navy-mid));display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.8)}
+.post .thumb svg{width:70px}
+.post .pbody{padding:22px 22px 26px;display:flex;flex-direction:column;flex:1}
+.post .date{font-size:.74rem;color:#9aa9bc;margin-bottom:8px}
+.post h3{font-size:1.18rem;color:var(--ink);margin-bottom:10px;line-height:1.22}
+.post p{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.post .more{margin-top:auto;font-weight:600;font-size:.85rem;color:var(--navy);display:inline-flex;gap:6px;align-items:center}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.info-block{margin-bottom:26px}
+.info-block h4{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.info-block p,.info-block a{color:#42566e;font-size:1rem;line-height:1.7}
+.cform{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px}
+.cform label{display:block;font-size:.8rem;font-weight:600;color:var(--ink);margin:0 0 6px}
+.cform input,.cform textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:13px 14px;font-family:inherit;font-size:.95rem;margin-bottom:18px;background:var(--paper)}
+.cform input:focus,.cform textarea:focus{outline:2px solid var(--blue);border-color:transparent}
+.cform textarea{min-height:130px;resize:vertical}
+.formnote{font-size:.95rem;color:#2e7d52;margin-top:10px;display:none;font-weight:600}
+.hours-table{width:100%;border-collapse:collapse}
+.hours-table td{padding:9px 0;border-bottom:1px solid var(--line);font-size:.94rem;color:#42566e}
+.hours-table td:last-child{text-align:right;color:var(--muted)}
+footer{background:var(--navy-deep);color:#cfdbea}
+.foot-gallery{display:grid;grid-template-columns:repeat(4,1fr)}
+.fg{aspect-ratio:1/1;background:linear-gradient(140deg,var(--navy),var(--navy-mid));position:relative;overflow:hidden}
+.fg svg{position:absolute;inset:0;width:100%;height:100%}
+.foot-main{padding:70px 0 38px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:40px}
+.foot-grid h4{font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#9db6d4;margin-bottom:18px}
+.foot-grid p,.foot-grid li,.foot-grid a{font-size:.9rem;color:#bcccde;line-height:1.85}
+.foot-grid ul{list-style:none}
+.foot-about img{height:46px;margin-bottom:18px}
+.foot-about .fslogan{font-family:"Playfair Display",Georgia,serif;font-style:italic;color:#cfe0f2;font-size:1.05rem;margin-bottom:10px}
+.foot-about p{max-width:34ch}
+.flinks li a:hover{color:#fff}
+.sub form{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.sub input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:13px 15px;color:#fff;font-family:inherit;font-size:.9rem}
+.sub input::placeholder{color:#88a0bd}
+.sub button{background:#fff;color:var(--navy);border:0;border-radius:10px;padding:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:.2s}
+.sub button:hover{background:var(--blue);color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;padding-bottom:22px;font-size:.8rem;color:#8fa6c1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.foot-bottom a{color:#bcccde}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+@media(max-width:960px){
+.hero-grid{grid-template-columns:1fr;text-align:center;min-height:auto;padding:30px 0 64px}
+.hero{min-height:auto}.hero-copy{padding:120px 0 64px;max-width:none}
+.hero::after{background:linear-gradient(180deg,rgba(11,22,38,.82),rgba(11,22,38,.74))}
+.hero .tagline{margin:0 0 30px}.hero-actions{justify-content:flex-start}.vurl{display:none}
+.cards,.blog-grid{grid-template-columns:1fr 1fr}
+.team-grid{grid-template-columns:repeat(2,1fr)}
+.quotes,.svc-grid,.asg-grid,.rsc .grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+.prod-grid{grid-template-columns:repeat(3,1fr)}
+.foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+section{padding:60px 0}
+.menu{position:fixed;inset:78px 0 auto 0;background:var(--navy);flex-direction:column;gap:0;padding:10px 24px 24px;transform:translateY(-130%);transition:transform .35s;box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.menu.open{transform:translateY(0)}
+.menu li{width:100%;border-bottom:1px solid rgba(255,255,255,.08)}
+.menu a{display:block;padding:14px 0}
+.burger{display:block}.nav .cta{display:none}
+header{background:var(--navy)}
+.hero{margin-top:0;padding-top:0}.page-hero{margin-top:0;padding-top:120px}
+.cards,.blog-grid,.rev-grid,.stat-grid{grid-template-columns:1fr}
+.prod-grid,.team-grid{grid-template-columns:1fr 1fr;gap:14px}
+.featured{padding:32px 22px}
+.foot-grid{grid-template-columns:1fr}.foot-gallery{grid-template-columns:repeat(2,1fr)}
+}
+</style></head><body><header><div class="wrap nav"><a href="index.html" class="brand" aria-label="Riberpublic SLS"><img src="img/logo.png" alt="Riberpublic SLS"></a><nav><ul class="menu" id="menu"><li><a href="index.html" class="active">Inicio</a></li><li><a href="nosotros.html" class="">Nosotros</a></li><li><a href="tienda.html" class="">Tienda online</a></li><li><a href="rsc.html" class="">RSC</a></li><li><a href="blog.html" class="">Blog</a></li><li><a href="contacto.html" class="">Contacto</a></li></ul></nav><a href="contacto.html" class="cta">Contacta</a><button class="burger" id="burger" aria-label="Menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg></button></div></header><section class="hero"><img class="hero-bg" src="img/fondo-hero.jpg" alt="" aria-hidden="true"><div class="wrap hero-inner"><div class="hero-copy"><span class="eyebrow">Empresa simulada SEFED · IES Ribera de Castilla</span><h1>Marketing <span class="amp">&amp;</span><br>merchandising</h1><p class="tagline">Deja huella sin dejar residuos. Diseñamos campañas y merchandising sostenible que conecta marcas con personas.</p><div class="hero-actions"><a href="tienda.html" class="btn btn-solid">Ver catálogo</a><a href="contacto.html" class="btn btn-ghost">Contacta</a></div></div></div></section><section><div class="wrap"><div class="sec-head reveal"><span class="eyebrow">Qué hacemos</span><h2>Soluciones que dejan huella</h2></div><div class="cards"><article class="card reveal"><figure class="duo"><svg class="illus" viewBox="0 0 400 300" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M96 118 l26 -16 18 12 18 -12 26 16 -14 24 -12 -7 v78 h-44 v-78 l-12 7z"/><text x="158" y="170" font-family="Playfair Display,serif" font-weight="800" font-size="20" fill="rgba(255,255,255,.9)" stroke="none" text-anchor="middle">RP</text><rect x="222" y="150" width="96" height="100" rx="6"/><path d="M246 150 c0 -26 48 -26 48 0"/><rect x="150" y="206" width="60" height="44" rx="5"/><path d="M210 216 h12 a10 10 0 0 1 0 20 h-12"/><line x1="200" y1="92" x2="200" y2="44" stroke-width="1.6"/><g stroke-width="1.2"><line x1="200" y1="44" x2="186" y2="28"/><line x1="200" y1="44" x2="194" y2="22"/><line x1="200" y1="44" x2="206" y2="22"/><line x1="200" y1="44" x2="214" y2="28"/></g><g fill="rgba(255,255,255,.9)" stroke="none"><circle cx="186" cy="28" r="2"/><circle cx="194" cy="22" r="2"/><circle cx="206" cy="22" r="2"/><circle cx="214" cy="28" r="2"/></g></svg></figure><div class="card-body"><span class="card-num">01</span><h3>Merchandising</h3><p>Son muchos los artículos de merchandising que encontrarás dentro de nuestro catálogo. Con ellos, además de fidelizar a tus clientes, lograrás mayor visibilidad para tu marca.</p></div></article><article class="card reveal"><figure class="duo"><svg class="illus" viewBox="0 0 400 300" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><line x1="96" y1="232" x2="300" y2="232"/><rect x="116" y="180" width="28" height="52"/><rect x="156" y="148" width="28" height="84"/><rect x="196" y="112" width="28" height="120"/><rect x="236" y="160" width="28" height="72"/><polyline points="130,168 170,138 210,98 250,150" stroke-width="1.8" opacity=".7"/><circle cx="262" cy="96" r="26"/><line x1="281" y1="115" x2="300" y2="134" stroke-width="3"/><g fill="rgba(255,255,255,.9)" stroke="none"><circle cx="130" cy="168" r="2.6"/><circle cx="170" cy="138" r="2.6"/><circle cx="210" cy="98" r="2.6"/><circle cx="250" cy="150" r="2.6"/></g></svg></figure><div class="card-body"><span class="card-num">02</span><h3>Estudios de mercado</h3><p>Ayudamos a las marcas a mejorar sus productos y conocer mejor a sus clientes. Testea un producto, analiza el comportamiento de tus usuarios o evalúa tu posicionamiento.</p></div></article><article class="card reveal"><figure class="duo"><svg class="illus" viewBox="0 0 400 300" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M120 132 l64 -22 v80 l-64 -22 z"/><path d="M120 138 h-20 a8 8 0 0 0 -8 8 v8 a8 8 0 0 0 8 8 h20"/><path d="M150 190 l8 30 h18 l-6 -34"/><g stroke-width="1.8" opacity=".85"><path d="M196 120 a30 30 0 0 1 0 60"/><path d="M210 108 a48 48 0 0 1 0 84"/></g><g opacity=".8"><line x1="260" y1="96" x2="300" y2="120"/><line x1="300" y1="120" x2="288" y2="170"/><line x1="288" y1="170" x2="248" y2="160"/><line x1="260" y1="96" x2="288" y2="170"/></g><g fill="rgba(255,255,255,.95)" stroke="none"><circle cx="260" cy="96" r="5"/><circle cx="300" cy="120" r="5"/><circle cx="288" cy="170" r="5"/><circle cx="248" cy="160" r="5"/></g></svg></figure><div class="card-body"><span class="card-num">03</span><h3>Marketing digital</h3><p>Podemos encargarnos de todas tus necesidades de marketing y publicidad, desde desarrollar una estrategia hasta gestionar campañas.</p></div></article></div></div></section><section class="shop"><img class="bg" src="img/fondo-hero.jpg" alt="" aria-hidden="true"><div class="wrap reveal"><div class="seed-divider"><svg viewBox="0 0 80 60" fill="none"><line x1="40" y1="58" x2="40" y2="22" stroke="currentColor" stroke-width="1.4"/><g stroke="currentColor" stroke-width="1"><line x1="40" y1="22" x2="28" y2="8"/><line x1="40" y1="22" x2="36" y2="4"/><line x1="40" y1="22" x2="44" y2="4"/><line x1="40" y1="22" x2="52" y2="8"/></g><g fill="currentColor"><circle cx="28" cy="8" r="1.6"/><circle cx="36" cy="4" r="1.6"/><circle cx="44" cy="4" r="1.6"/><circle cx="52" cy="8" r="1.6"/></g></svg></div><span class="eyebrow">Tienda online</span><h2>Descubre un mundo de posibilidades</h2><a href="tienda.html" class="btn btn-solid">Ver productos </a></div></section><section class="alt"><div class="wrap"><div class="sec-head center reveal"><span class="eyebrow">Reseñas</span><h2>Lo que dicen nuestros clientes</h2></div><div class="rev-grid"><div class="rev reveal"><div class="stars">★★★★★</div><blockquote>«Pedimos a Riberpublic que renovara por completo la marca de nuestra empresa. No podemos estar más contentos, y nuestros clientes tampoco.»</blockquote><div class="who"><b>Ethan</b>Kemp Town</div></div><div class="rev reveal"><div class="stars">★★★★★</div><blockquote>«Realizaron un estudio de mercado completo que nos brindó información valiosa y nos ayudó a tomar decisiones informadas.»</blockquote><div class="who"><b>Jayla</b>Hove</div></div></div></div></section><footer><div class="foot-gallery" aria-hidden="true"><div class="fg"><svg viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="1.4" stroke-linecap="round"><line x1="100" y1="170" x2="100" y2="78"/><g><line x1="100" y1="78" x2="78" y2="44"/><line x1="100" y1="78" x2="90" y2="34"/><line x1="100" y1="78" x2="110" y2="34"/><line x1="100" y1="78" x2="122" y2="44"/><line x1="100" y1="78" x2="72" y2="62"/><line x1="100" y1="78" x2="128" y2="62"/></g><g fill="rgba(255,255,255,.85)" stroke="none"><circle cx="78" cy="44" r="2.4"/><circle cx="90" cy="34" r="2.4"/><circle cx="110" cy="34" r="2.4"/><circle cx="122" cy="44" r="2.4"/><circle cx="72" cy="62" r="2"/><circle cx="128" cy="62" r="2"/></g></svg></div><div class="fg"><svg viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.3"><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="48"/><circle cx="100" cy="100" r="26"/><circle cx="100" cy="100" r="4" fill="rgba(255,255,255,.85)" stroke="none"/></svg></div><div class="fg"><svg viewBox="0 0 200 200" fill="rgba(255,255,255,.55)" stroke="none"><g><circle cx="55" cy="55" r="4"/><circle cx="100" cy="55" r="4"/><circle cx="145" cy="55" r="4"/><circle cx="55" cy="100" r="4"/><circle cx="100" cy="100" r="4"/><circle cx="145" cy="100" r="4"/><circle cx="55" cy="145" r="4"/><circle cx="100" cy="145" r="4"/><circle cx="145" cy="145" r="4"/></g></svg></div><div class="fg"><svg viewBox="0 0 200 200" fill="none"><text x="44" y="132" font-family="Playfair Display,serif" font-weight="800" font-size="92" fill="rgba(255,255,255,.85)">R</text><text x="104" y="132" font-family="Playfair Display,serif" font-weight="800" font-size="92" fill="rgba(255,255,255,.85)">P</text><line x1="100" y1="120" x2="100" y2="70" stroke="rgba(255,255,255,.85)" stroke-width="1.4"/><g stroke="rgba(255,255,255,.85)" stroke-width="1"><line x1="100" y1="70" x2="90" y2="56"/><line x1="100" y1="70" x2="100" y2="52"/><line x1="100" y1="70" x2="110" y2="56"/></g></svg></div></div><div class="foot-main"><div class="wrap foot-grid"><div class="foot-about"><img src="img/logo.png" alt="Riberpublic SLS"><p class="fslogan">«Deja huella sin dejar residuos»</p><p>Somos una empresa simulada de venta de merchandising. IES Ribera de Castilla. Proyecto SEFED.</p></div><div><h4>Navegación</h4><ul class="flinks"><li><a href="nosotros.html">Nosotros</a></li><li><a href="tienda.html">Tienda online</a></li><li><a href="rsc.html">RSC</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div><div><h4>Contacto</h4><p><a href="mailto:riberpublic.sefed@gmail.com">riberpublic.sefed@gmail.com</a><br><a href="tel:983260716">983 260 716</a><br>Mirabel, 25<br>47010 Valladolid</p></div><div class="sub"><h4>Suscríbete</h4><p>Novedades y catálogo en tu correo.</p><form onsubmit="event.preventDefault();this.reset();this.querySelector('button').textContent='¡Suscrito!'"><input type="email" required placeholder="Tu correo electrónico…" aria-label="Correo"><button type="submit">Suscribirme</button></form></div></div></div><div class="wrap foot-bottom"><span>© 2026 Riberpublic SLS · Empresa simulada SEFED</span><span><a href="index.html">riberpublic.com</a></span></div></footer><script>
+const h=document.querySelector('header'),s=()=>h.classList.toggle('scrolled',scrollY>40);s();addEventListener('scroll',s,{passive:true});
+const b=document.getElementById('burger'),m=document.getElementById('menu');
+if(b){b.addEventListener('click',()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>m.classList.remove('open')))}
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script></body></html>

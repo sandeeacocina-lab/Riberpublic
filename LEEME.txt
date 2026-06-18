@@ -1,0 +1,49 @@
+WEB DE RIBERPUBLIC SLS — VERSIÓN LIMPIA Y LISTA PARA PUBLICAR
+=============================================================
+
+QUÉ CONTIENE ESTE PAQUETE
+-------------------------
+- 6 páginas HTML: index, tienda, nosotros, blog, rsc, contacto
+- carpeta img/ con las 26 imágenes del sitio (logo, fondos, productos, equipo)
+
+La portada es index.html. Las páginas se enlazan solas entre sí.
+Mantén SIEMPRE la carpeta img/ junto a los HTML: si la separas, las
+imágenes dejan de verse.
+
+
+CÓMO PUBLICARLA EN NEOCITIES (gratis, lo más fácil)
+---------------------------------------------------
+1. Crea una cuenta en neocities.org. El nombre de usuario será el
+   subdominio (ej. "riberpublic" -> riberpublic.neocities.org).
+2. En el panel, sube los 6 archivos HTML.
+3. Crea una carpeta llamada "img" y sube dentro las imágenes.
+4. Ya está online.
+
+Para actualizar: arrastra el archivo nuevo encima del antiguo; se
+sobrescribe y se publica al instante.
+
+
+CÓMO PUBLICARLA EN GITHUB PAGES (gratis y permite dominio propio)
+-----------------------------------------------------------------
+1. Crea una cuenta en github.com y un repositorio nuevo.
+2. Sube todo (los HTML y la carpeta img/) con "Add file > Upload files".
+3. En Settings > Pages, activa Pages sobre la rama principal.
+4. La web queda en usuario.github.io/repositorio.
+
+
+USAR TU DOMINIO PROPIO (lo tienes en WordPress)
+-----------------------------------------------
+Lo más limpio es un SUBDOMINIO, dejando tu WordPress intacto en el
+dominio principal. Ejemplo: riberpublic.tudominio.com
+- En GitHub Pages el dominio propio es gratis (Settings > Pages > Custom domain).
+- En Neocities el dominio propio requiere el plan de pago (~5 $/mes).
+El subdominio se activa añadiendo un registro DNS (CNAME) donde gestionas
+el dominio. Dime la ruta exacta cuando llegue el momento y te guío.
+
+
+CAMBIOS EN EL CONTENIDO
+-----------------------
+- Cambiar una FOTO tú misma: sustituye el archivo de img/ por otro con
+  el mismo nombre (ej. otra foto guardada como producto-M086.webp).
+- Cambiar TEXTOS, precios, secciones o estructura: indícame qué cambiar
+  y en qué página, y te devuelvo el archivo corregido para subirlo.
