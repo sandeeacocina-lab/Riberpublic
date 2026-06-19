@@ -47,3 +47,23 @@ CAMBIOS EN EL CONTENIDO
   el mismo nombre (ej. otra foto guardada como producto-M086.webp).
 - Cambiar TEXTOS, precios, secciones o estructura: indícame qué cambiar
   y en qué página, y te devuelvo el archivo corregido para subirlo.
+
+
+-----------------------------------------------------------
+ACTUALIZACIÓN: BLOG AUTÓNOMO (sin depender de WordPress)
+-----------------------------------------------------------
+Cada entrada del blog tiene ahora su propia página interna
+(blog-01-autobus.html, blog-02-decada.html, ... blog-23-talento.html),
+con el texto completo y su portada en img/. Al pulsar una entrada o
+"Leer más" se abre esa página dentro de tu web, ya NO va a WordPress.
+
+Tu web no depende de riberpublic.com (WordPress) para nada: textos,
+imágenes y navegación están todos alojados aquí.
+
+ANTES DE CERRAR EL WORDPRESS (recomendado):
+Exporta una copia de seguridad por si la necesitas en el futuro.
+En WordPress.com: Ajustes > General > Exportar (o Herramientas >
+Exportar). Descarga también tu biblioteca de medios para conservar
+las fotos originales que había dentro de los artículos (esas no se
+pudieron traer automáticamente; las portadas del blog son diseños
+propios que ya están en img/).
