@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Manrope",system-ui,sans-serif;color:#16314f;background:#fbfcfe;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+#rbp-body p{color:#42566e;font-size:1.08rem;line-height:1.85;margin-bottom:20px}
+#rbp-body p.lead{font-size:1.3rem;line-height:1.66;color:#27405c}
+#rbp-body h2{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:1.62rem;color:#16314f;letter-spacing:-.01em;margin:36px 0 12px;line-height:1.16}
+#rbp-body h3{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:1.3rem;color:#16314f;margin:32px 0 10px;line-height:1.2}
+#rbp-body strong{color:#27405c;font-weight:700}
+#rbp-body em{color:#1c3a5e;font-style:italic}
+#rbp-body a{color:#1c3a5e;font-weight:600;border-bottom:1px solid rgba(28,58,94,.32);transition:border-color .2s}
+#rbp-body a:hover{border-color:#1c3a5e}
+#rbp-body ul{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:11px}
+#rbp-body li{position:relative;padding-left:26px;color:#42566e;font-size:1.04rem;line-height:1.65}
+#rbp-body li::before{content:"";position:absolute;left:3px;top:10px;width:7px;height:7px;border-radius:50%;background:#5e80aa}
+@keyframes rbp-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+@keyframes rbp-float-b{0%,100%{transform:translateY(0)}50%{transform:translateY(16px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+<div id="rbp-root" style="position:relative">
+
+<header id="rbp-header" style="position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(28,58,94,0);transition:background .35s ease,box-shadow .35s ease,backdrop-filter .35s">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:78px;color:#fff">
+    <a href="index.html" aria-label="Riberpublic SLS" style="display:flex;align-items:center"><img src="img/logo.png" alt="Riberpublic SLS" style="height:42px;width:auto;display:block"></a>
+    <nav><ul style="display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0">
+      <li><a href="index.html" style="font-size:.82rem;font-weight:600;letter-spacing:.03em;color:#fff;opacity:.85;transition:opacity .2s" style-hover="opacity:1" data-en="Home">Inicio</a></li>
+      <li><a href="nosotros.html" style="font-size:.82rem;font-weight:600;letter-spacing:.03em;color:#fff;opacity:.85;transition:opacity .2s" style-hover="opacity:1" data-en="About">Nosotros</a></li>
+      <li><a href="rsc.html" style="font-size:.82rem;font-weight:600;letter-spacing:.03em;color:#fff;opacity:.85;transition:opacity .2s" style-hover="opacity:1" data-en="CSR">RSC</a></li>
+      <li><a href="blog.html" style="font-size:.82rem;font-weight:600;letter-spacing:.03em;color:#fff;opacity:1;transition:opacity .2s">Blog</a></li>
+      <li><a href="contacto.html" style="font-size:.82rem;font-weight:600;letter-spacing:.03em;color:#fff;opacity:.85;transition:opacity .2s" style-hover="opacity:1" data-en="Contact">Contacto</a></li>
+    </ul></nav>
+    <div style="display:flex;align-items:center;gap:14px">
+      <button id="rbp-lang" aria-label="Cambiar idioma" style="display:inline-flex;align-items:center;gap:6px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.06);border-radius:40px;padding:7px 14px;font-family:inherit;font-size:.72rem;font-weight:700;letter-spacing:.12em;color:#fff;cursor:pointer;transition:.25s" style-hover="background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.7)"><span style="width:7px;height:7px;border-radius:50%;background:#e7b53c;display:inline-block"></span><span id="rbp-lang-label">EN</span></button>
+      <a href="tienda.html" style="border:1.5px solid rgba(255,255,255,.55);border-radius:40px;padding:9px 22px;font-size:.82rem;font-weight:600;color:#fff;transition:.25s" style-hover="background:#fff;color:#1c3a5e;border-color:#fff" data-en="Shop">Tienda</a>
+    </div>
+  </div>
+</header>
+
+<section style="position:relative;color:#fff;overflow:hidden;padding:158px 0 150px;background:radial-gradient(120% 130% at 82% 8%,rgba(94,128,170,.4),transparent 55%),linear-gradient(135deg,#132a47,#1c3a5e 55%,#2d5481)">
+  <div style="position:absolute;top:0;left:0;width:240px;height:240px;background:linear-gradient(135deg,#5a47b8,transparent 70%);opacity:.5;clip-path:polygon(0 0,100% 0,0 100%);pointer-events:none"></div>
+  <div data-parallax="0.2" style="position:absolute;top:54px;right:7%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(90,71,184,.5),transparent 70%);filter:blur(8px);animation:rbp-float 9s ease-in-out infinite;pointer-events:none"></div>
+  <div data-parallax="0.28" style="position:absolute;bottom:90px;left:6%;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(94,128,170,.4),transparent 70%);filter:blur(6px);animation:rbp-float-b 7s ease-in-out infinite;pointer-events:none"></div>
+  <div style="position:relative;z-index:2;max-width:820px;margin:0 auto;padding:0 24px;text-align:center">
+    <div data-reveal style="font-size:.78rem;color:#9db6d4;margin-bottom:20px;letter-spacing:.03em"><a href="index.html" style="color:#cfe0f2" data-en="Home">Inicio</a> · <a href="blog.html" style="color:#cfe0f2">Blog</a> · <span id="rbp-bc" style="color:#9db6d4">…</span></div>
+    <span id="rbp-cat" data-reveal data-delay="60" style="display:inline-block;font-weight:600;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:#9db6d4;border:1px solid rgba(157,182,212,.4);border-radius:40px;padding:7px 16px">…</span>
+    <h1 id="rbp-title" data-reveal data-delay="120" style="font-family:'Playfair Display',Georgia,serif;font-weight:800;letter-spacing:-.01em;font-size:clamp(2.1rem,5vw,3.5rem);margin:18px 0 16px;line-height:1.08">…</h1>
+    <div id="rbp-meta" data-reveal data-delay="180" style="display:inline-flex;align-items:center;gap:14px;color:#cfe0f2;font-size:.92rem;font-weight:500">
+      <span id="rbp-date">…</span><span style="width:5px;height:5px;border-radius:50%;background:#e7b53c;display:inline-block"></span><span id="rbp-read" data-en="2 min read">2 min de lectura</span>
+    </div>
+  </div>
+</section>
+
+<div style="max-width:1000px;margin:-110px auto 0;padding:0 24px;position:relative;z-index:5">
+  <div data-reveal style="aspect-ratio:16/8;border-radius:20px;overflow:hidden;background:linear-gradient(140deg,#1c3a5e,#2d5481);box-shadow:0 34px 70px rgba(19,42,71,.32)">
+    <img id="rbp-feat-img" src="img/logo.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+  </div>
+</div>
+
+<article style="max-width:760px;margin:0 auto;padding:56px 24px 20px">
+  <div id="rbp-body" data-reveal></div>
+
+  <div data-reveal style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid #e1e8f1;border-bottom:1px solid #e1e8f1;padding:22px 0;margin:40px 0 0">
+    <a href="blog.html" style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;color:#1c3a5e" data-en="← Back to blog">← Volver al blog</a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#9aa9bc;margin-right:4px" data-en="Share">Compartir</span>
+      <a id="rbp-sh-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp" style="width:38px;height:38px;border-radius:50%;border:1px solid #d8e1ec;display:inline-flex;align-items:center;justify-content:center;color:#1c3a5e;transition:.2s" style-hover="background:#1c3a5e;color:#fff;border-color:#1c3a5e"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 .9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6c-.1.1-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.6-.1 1.2Z"/></svg></a>
+      <a id="rbp-sh-x" href="#" target="_blank" rel="noopener" aria-label="X" style="width:38px;height:38px;border-radius:50%;border:1px solid #d8e1ec;display:inline-flex;align-items:center;justify-content:center;color:#1c3a5e;transition:.2s" style-hover="background:#1c3a5e;color:#fff;border-color:#1c3a5e"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M18.2 2H21l-6.4 7.3L22 22h-6l-4.7-6.1L5.9 22H3l6.9-7.9L2 2h6.2l4.2 5.6L18.2 2Zm-1 18h1.6L7.8 3.7H6.1L17.2 20Z"/></svg></a>
+      <a id="rbp-sh-mail" href="#" aria-label="Email" style="width:38px;height:38px;border-radius:50%;border:1px solid #d8e1ec;display:inline-flex;align-items:center;justify-content:center;color:#1c3a5e;transition:.2s" style-hover="background:#1c3a5e;color:#fff;border-color:#1c3a5e"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+    </div>
+  </div>
+
+  <nav id="rbp-prevnext" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px"></nav>
+</article>
+
+<section style="background:#132a47;color:#fff;text-align:center;position:relative;overflow:hidden;padding:84px 0;margin-top:64px">
+  <div style="position:absolute;top:0;right:0;width:240px;height:240px;background:linear-gradient(225deg,#5a47b8,transparent 70%);opacity:.4;clip-path:polygon(100% 0,100% 100%,0 0);pointer-events:none"></div>
+  <div data-reveal style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px">
+    <span style="font-weight:600;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:#cfe0f2" data-en="Online shop">Tienda online</span>
+    <h2 style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(1.9rem,4.4vw,3rem);margin:14px auto 28px;max-width:20ch;line-height:1.1" data-en="Don't miss any of our offers">No te pierdas ninguna de nuestras ofertas</h2>
+    <a href="tienda.html" style="display:inline-flex;align-items:center;gap:9px;border-radius:44px;padding:15px 32px;font-weight:600;font-size:.94rem;background:#fff;color:#1c3a5e;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.32)" data-en="View catalogue">Ver catálogo</a>
+  </div>
+</section>
+
+<section style="padding:84px 0 96px">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div data-reveal style="margin-bottom:34px">
+      <span style="font-weight:600;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:#5e80aa" data-en="Keep reading">Sigue leyendo</span>
+      <h2 style="font-family:'Playfair Display',serif;font-weight:800;letter-spacing:-.01em;font-size:clamp(1.7rem,3.4vw,2.4rem);margin-top:12px;line-height:1.06" data-en="More articles">Más artículos</h2>
+    </div>
+    <div id="rbp-related" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px"></div>
+  </div>
+</section>
+
+<footer style="background:#132a47;color:#cfdbea">
+  <div style="padding:70px 0 38px">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:40px">
+      <div>
+        <img src="img/logo.png" alt="Riberpublic SLS" style="height:46px;margin-bottom:18px">
+        <p style="font-family:'Playfair Display',Georgia,serif;font-style:italic;color:#cfe0f2;font-size:1.05rem;margin-bottom:10px" data-en="«Leave a mark without leaving waste»">«Deja huella sin dejar residuos»</p>
+        <p style="font-size:.9rem;color:#bcccde;line-height:1.85;max-width:34ch" data-en="We are a simulated merchandising company. IES Ribera de Castilla. SEFED project.">Somos una empresa simulada de venta de merchandising. IES Ribera de Castilla. Proyecto SEFED.</p>
+      </div>
+      <div>
+        <h4 style="font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#9db6d4;margin-bottom:18px" data-en="Navigation">Navegación</h4>
+        <ul style="list-style:none">
+          <li><a href="nosotros.html" style="font-size:.9rem;color:#bcccde;line-height:1.95;transition:color .2s" style-hover="color:#fff" data-en="About">Nosotros</a></li>
+          <li><a href="tienda.html" style="font-size:.9rem;color:#bcccde;line-height:1.95;transition:color .2s" style-hover="color:#fff" data-en="Shop">Tienda online</a></li>
+          <li><a href="rsc.html" style="font-size:.9rem;color:#bcccde;line-height:1.95;transition:color .2s" style-hover="color:#fff" data-en="CSR">RSC</a></li>
+          <li><a href="blog.html" style="font-size:.9rem;color:#bcccde;line-height:1.95;transition:color .2s" style-hover="color:#fff">Blog</a></li>
+          <li><a href="contacto.html" style="font-size:.9rem;color:#bcccde;line-height:1.95;transition:color .2s" style-hover="color:#fff" data-en="Contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#9db6d4;margin-bottom:18px" data-en="Contact">Contacto</h4>
+        <p style="font-size:.9rem;color:#bcccde;line-height:1.95;word-break:break-word"><a href="mailto:riberpublic.sefed@gmail.com" style="color:#fff;font-weight:600" style-hover="color:#9db6d4">riberpublic.sefed@gmail.com</a><br><a href="tel:983260716" style="color:#bcccde">983 260 716</a><br>Mirabel, 25<br>47010 Valladolid</p>
+      </div>
+      <div>
+        <h4 style="font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#9db6d4;margin-bottom:18px" data-en="Subscribe">Suscríbete</h4>
+        <p style="font-size:.9rem;color:#bcccde;line-height:1.85" data-en="News and catalogue in your inbox.">Novedades y catálogo en tu correo.</p>
+        <form id="rbp-sub" style="display:flex;flex-direction:column;gap:12px;margin-top:10px">
+          <input type="email" name="correo" required placeholder="Tu correo electrónico…" data-en-ph="Your email…" aria-label="Correo" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:13px 15px;color:#fff;font-family:inherit;font-size:.9rem">
+          <button type="submit" style="background:#fff;color:#1c3a5e;border:0;border-radius:10px;padding:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:.2s" style-hover="background:#5e80aa;color:#fff" data-en="Subscribe">Suscribirme</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.1);padding:22px 0">
+    <div style="max-width:1200px;margin:0 auto;padding:0 24px;font-size:.8rem;color:#8fa6c1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+      <span data-en="© 2026 Riberpublic SLS · Simulated company SEFED">© 2026 Riberpublic SLS · Empresa simulada SEFED</span>
+      <span><a href="index.html" style="color:#bcccde">riberpublic.com</a></span>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = document.getElementById('rbp-root');
+    if (!root) return;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* [slug,img,dateES,dateEN,catES,catEN,titleES,titleEN,bodyES,bodyEN] */
+    const posts = [
+      ['blog-01-autobus','blog-01-autobus','27 febrero, 2026','27 February, 2026','Campaña','Campaign','Campaña publicitaria autobús','Bus advertising campaign',
+        `<p>🚍✨ <strong>¡Arrancamos nueva campaña y queremos que formes parte!</strong></p><p>Del <strong>1 de marzo al 31 de agosto</strong> estaremos presentes en las líneas <strong>1 y C1</strong>, dos de las más transitadas de Valladolid. Esto significa algo muy claro: más personas viéndonos cada día, más impacto real y más conexión con la ciudad.</p><p>No es solo publicidad. Es estar donde está la gente. En su rutina. En su trayecto al trabajo. En su día a día.</p><p>Las líneas 1 y C1 recorren puntos clave, conectan barrios estratégicos y mueven a miles de personas cada jornada. Para nosotros, como empresa simulada, este paso representa crecimiento, ambición y ganas de hacer las cosas a lo grande.</p><p>Queremos que cuando alguien mire por la ventana del bus, nos vea. Queremos que cuando alguien piense en nuestro sector, nos recuerde. Queremos estar presentes.</p><p>👀 Si estás por Valladolid, fíjate bien… puede que nos cruces antes de lo que imaginas.</p><p>Gracias a Grupo Corporalia por acompañarnos y ayudarnos a hacer realidad este proyecto.</p><p>Seguimos avanzando. Seguimos creciendo. Y esto es solo el principio. 🚀</p>`,
+        `<p>🚍✨ <strong>A new campaign is here — and we want you to be part of it!</strong></p><p>From <strong>1 March to 31 August</strong> we'll be on lines <strong>1 and C1</strong>, two of the busiest in Valladolid. That means one clear thing: more people seeing us every day, more real impact and a stronger bond with the city.</p><p>It's not just advertising. It's being where people are. In their routine. On their commute. In their everyday life.</p><p>Lines 1 and C1 run through key spots, connect strategic neighbourhoods and move thousands of people every day. For us, as a practice enterprise, this step means growth, ambition and the drive to do things in a big way.</p><p>We want people to see us when they look out of the bus window. We want them to remember us when they think of our sector. We want to be present.</p><p>👀 If you're around Valladolid, look closely… you might run into us sooner than you think.</p><p>Thanks to Grupo Corporalia for supporting us and helping make this project a reality.</p><p>We keep moving forward. We keep growing. And this is only the beginning. 🚀</p>`],
+      ['blog-02-decada','blog-02-decada','13 febrero, 2026','13 February, 2026','Aniversario','Anniversary','El 2026 es el nuevo 2016','2026 is the new 2016',
+        `<p>En Riberpublic llevamos más de una década acompañándote con el mejor merchandising desde 2008. Pero el tiempo no se detiene y nosotros tampoco.</p><p>Lo que empezó hace casi 18 años como una pequeña idea, hoy se transforma para estar a la vanguardia. Porque en 2026, la creatividad, la innovación y el estilo vuelven a redefinir el merchandising.</p><p>Prepárate para descubrir nuevas colecciones, materiales y diseños que marcan la diferencia, porque lo clásico nunca pasa de moda, pero lo nuevo es la oportunidad de seguir creciendo contigo.</p><p>Riberpublic: más de 15 años creando experiencias únicas. ¿Estás listo para lo que viene?</p>`,
+        `<p>At Riberpublic we've been with you for over a decade, offering the best merchandising since 2008. But time doesn't stand still — and neither do we.</p><p>What began almost 18 years ago as a small idea is now transforming to stay at the cutting edge. Because in 2026, creativity, innovation and style redefine merchandising once again.</p><p>Get ready to discover new collections, materials and designs that make a difference, because the classics never go out of style, but the new is the chance to keep growing with you.</p><p>Riberpublic: over 15 years creating unique experiences. Are you ready for what's coming?</p>`],
+      ['blog-03-sanvalentin','blog-03-sanvalentin','9 febrero, 2026','9 February, 2026','Oferta','Offer','Oferta San Valentín · 20% descuento','Valentine\u2019s offer · 20% off',
+        `<p>No es nostalgia. Es ilusión. ❤️</p><p>Del 4 al 15 de febrero, aprovecha <strong>ofertas especiales de San Valentín</strong>.</p><p>Regalos que enamoran. Precios que convencen.</p>`,
+        `<p>It's not nostalgia. It's excitement. ❤️</p><p>From 4 to 15 February, enjoy <strong>special Valentine's offers</strong>.</p><p>Gifts that win hearts. Prices that win you over.</p>`],
+      ['blog-04-bluemonday','blog-04-bluemonday','19 enero, 2026','19 January, 2026','Oferta','Offer','Blue Monday 🥹','Blue Monday 🥹',
+        `<p><strong>BLUE MONDAY</strong> 😭</p><p>Disfruta de un <strong>20% de descuento adicional</strong> sobre el 30% ya activo.</p><p>Oferta válida solo durante el Blue Monday o hasta agotar existencias. No dejes pasar esta oportunidad. 🥺</p><p>«Convierte el peor lunes en la mejor compra». RIBERPUBLIC S.L.S</p>`,
+        `<p><strong>BLUE MONDAY</strong> 😭</p><p>Enjoy an <strong>extra 20% off</strong> on top of the 30% already active.</p><p>Valid only during Blue Monday or while stocks last. Don't miss this chance. 🥺</p><p>«Turn the worst Monday into the best purchase». RIBERPUBLIC S.L.S</p>`],
+      ['blog-05-rebajas','blog-05-rebajas','14 enero, 2026','14 January, 2026','Oferta','Offer','Rebajas de invierno','Winter sale',
+        `<p>❄️ <strong>NUEVAS REBAJAS DE INVIERNO</strong> ❄️</p><p>Aprovecha y utiliza nuestro congelado descuento «<strong>REBAJASRBP26</strong>» para conseguir los mejores precios. Las temperaturas bajan, pero nuestros precios también. 😉</p><p>🎁 Hasta un <strong>30% de descuento</strong> en todos nuestros productos. 🎁</p><p>Si Santa se olvidó… ahora es el momento. 🎀 Oferta válida del 9 de enero al 2 de febrero.</p><p>⭐ Lo que no vino en Navidad, ahora en rebajas sí. ⭐</p>`,
+        `<p>❄️ <strong>NEW WINTER SALE</strong> ❄️</p><p>Make the most of our frozen code «<strong>REBAJASRBP26</strong>» to get the best prices. Temperatures are dropping — and so are our prices. 😉</p><p>🎁 Up to <strong>30% off</strong> all our products. 🎁</p><p>If Santa forgot… now's the time. 🎀 Valid from 9 January to 2 February.</p><p>⭐ What didn't come at Christmas now comes in the sale. ⭐</p>`],
+      ['blog-06-feriasefed','blog-06-feriasefed','5 diciembre, 2025','5 December, 2025','Evento','Event','Participación en la Feria Virtual SEFED','Taking part in the SEFED Virtual Fair',
+        `<p>Durante la Feria Virtual SEFED, Riberpublic tuvo la oportunidad de establecer contacto y colaborar con diversas empresas participantes, llevando a cabo operaciones de compra y venta en un entorno completamente digital. Este evento nos permitió fortalecer nuestras competencias comerciales y aplicar nuestros procedimientos internos de atención al cliente.</p><p>Como empresa especializada en merchandising, organizamos nuestro equipo para ofrecer un servicio eficiente y profesional. Para ello, distribuimos las tareas entre el departamento de recepción y el resto de empleados responsables de la negociación de productos.</p><p>El departamento de recepción desempeñó un papel esencial, encargándose de atender a las empresas visitantes, darles la bienvenida y proporcionarles un enlace directo para que pudieran ser atendidas posteriormente por otros miembros del equipo. Cada interacción se realizó utilizando un lenguaje formal y adecuado, asegurando una comunicación clara y una experiencia satisfactoria para clientes y colaboradores.</p><p>Por su parte, el resto del personal se ocupó de presentar nuestra empresa, explicar la oferta vigente y llevar a cabo tanto compras a nuestros clientes como ventas de nuestros productos.</p><p>Nuestra participación en la Feria Virtual SEFED fue una experiencia muy enriquecedora para todo el equipo.</p>`,
+        `<p>During the SEFED Virtual Fair, Riberpublic had the chance to connect and collaborate with various participating companies, carrying out buying and selling in a fully digital setting. This event let us strengthen our commercial skills and apply our internal customer-service procedures.</p><p>As a company specialising in merchandising, we organised our team to deliver an efficient, professional service. To do so, we shared tasks between the reception department and the rest of the staff responsible for negotiating products.</p><p>The reception department played an essential role, welcoming visiting companies and providing them with a direct link so they could later be assisted by other team members. Every interaction used formal, appropriate language, ensuring clear communication and a satisfying experience for clients and partners.</p><p>Meanwhile, the rest of the staff presented our company, explained the current offer and handled both purchases from our clients and sales of our products.</p><p>Taking part in the SEFED Virtual Fair was a hugely enriching experience for the whole team.</p>`],
+      ['blog-07-blackfriday','blog-07-blackfriday','19 noviembre, 2025','19 November, 2025','Oferta','Offer','Promoción de Black Friday','Black Friday promotion',
+        `<p>🎉 <strong>¡Black Friday llegó y no puedes perdértelo!</strong> 🖤</p><p>Aprovecha nuestros <strong>descuentos exclusivos</strong> por tiempo limitado y llévate tus productos favoritos al <strong>mejor precio del año</strong>.</p><p>🔥 <strong>Hasta un 35% de descuento</strong> en artículos seleccionados. ⏳ Oferta válida solo durante el Black Friday o hasta agotar existencias.</p><p>No dejes pasar esta oportunidad. ✨ <strong>Compra ahora y ahorra más que nunca.</strong></p>`,
+        `<p>🎉 <strong>Black Friday is here and you can't miss it!</strong> 🖤</p><p>Take advantage of our <strong>exclusive discounts</strong> for a limited time and get your favourite products at the <strong>best price of the year</strong>.</p><p>🔥 <strong>Up to 35% off</strong> selected items. ⏳ Valid only during Black Friday or while stocks last.</p><p>Don't miss this chance. ✨ <strong>Buy now and save more than ever.</strong></p>`],
+      ['blog-08-visita','blog-08-visita','5 noviembre, 2025','5 November, 2025','Evento','Event','Visita de estudiantes del ITES Luigi Einaudi','Visit from ITES Luigi Einaudi students',
+        `<p>La visita formó parte de un programa de intercambio académico y cultural que busca fortalecer los lazos entre instituciones educativas y promover el aprendizaje práctico en entornos empresariales reales.</p><p>Durante su recorrido por nuestra empresa simulada, los estudiantes pudieron conocer de cerca cómo gestionamos nuestros procesos, desde la administración y la contabilidad hasta las estrategias de marketing y servicio al cliente. Además, tuvieron la oportunidad de participar en dinámicas de trabajo colaborativo con nuestro equipo, compartiendo ideas, experiencias y perspectivas sobre el mundo empresarial.</p><p>Fue una jornada llena de aprendizaje, intercambio cultural y entusiasmo. Nuestros visitantes italianos mostraron gran interés en el funcionamiento del modelo de empresa simulada, destacando la importancia de la innovación, la comunicación y el trabajo en equipo.</p><p>Agradecemos profundamente al <strong>ITES Luigi Einaudi</strong> por su visita y esperamos que esta experiencia haya sido enriquecedora para todos. ¡Las puertas de nuestra empresa estarán siempre abiertas para futuras colaboraciones internacionales!</p>`,
+        `<p>The visit was part of an academic and cultural exchange programme that seeks to strengthen ties between educational institutions and promote hands-on learning in real business settings.</p><p>During their tour of our practice enterprise, the students saw first-hand how we manage our processes, from administration and accounting to marketing and customer-service strategies. They also took part in collaborative work activities with our team, sharing ideas, experiences and perspectives on the business world.</p><p>It was a day full of learning, cultural exchange and enthusiasm. Our Italian visitors showed great interest in how the practice-enterprise model works, highlighting the importance of innovation, communication and teamwork.</p><p>We are deeply grateful to <strong>ITES Luigi Einaudi</strong> for their visit and hope the experience was enriching for everyone. Our company's doors will always be open for future international collaborations!</p>`],
+      ['blog-09-apertura','blog-09-apertura','29 octubre, 2025','29 October, 2025','Oferta','Offer','Oferta de apertura','Opening offer',
+        `<p>🎉 <strong>¡Riber Public vuelve a abrir sus puertas!</strong> 🎉</p><p>Estamos muy contentos de anunciar nuestra <strong>gran reapertura</strong>, y para celebrarlo te traemos una <strong>oferta especial del 20% de descuento</strong> en todos nuestros servicios.</p><p>📅 Del 22 al 31 de octubre podrás aprovechar esta promoción exclusiva y descubrir todo lo nuevo que tenemos para ti. Válida para todos los pedidos recibidos en estas fechas.</p><p>💌 Para más información, escríbenos a <strong>riberpublic.sefed@gmail.com</strong>. ¡Te esperamos para comenzar esta nueva etapa juntos! 🚀</p>`,
+        `<p>🎉 <strong>Riber Public reopens its doors!</strong> 🎉</p><p>We're delighted to announce our <strong>grand reopening</strong>, and to celebrate we bring you a <strong>special 20% discount</strong> on all our services.</p><p>📅 From 22 to 31 October you can take advantage of this exclusive promotion and discover everything new we have for you. Valid for all orders received during these dates.</p><p>💌 For more information, write to us at <strong>riberpublic.sefed@gmail.com</strong>. We look forward to starting this new chapter together! 🚀</p>`],
+      ['blog-halloween25','blog-halloween25','29 octubre, 2025','29 October, 2025','Oferta','Offer','Ofertas de Halloween','Halloween offers',
+        `<p>Este Halloween, en RIBERPUBLIC queremos darte un susto… ¡de descuentos! 👻</p><p>Toda nuestra tienda está <strong>con un 20% de descuento</strong> en todos los productos, para que disfrutes de lo que más te gusta al mejor precio.</p><p>Pero cuidado, ¡estas ofertas desaparecerán como un fantasma el <strong>3 de noviembre</strong>!</p><p>Aprovecha la magia de Halloween y haz tu pedido antes de que sea demasiado tarde. 🕷️</p>`,
+        `<p>This Halloween, at RIBERPUBLIC we want to give you a fright… of discounts! 👻</p><p>Our whole shop is <strong>20% off</strong> on all products, so you can enjoy what you love most at the best price.</p><p>But beware, these offers will vanish like a ghost on <strong>3 November</strong>!</p><p>Make the most of the Halloween magic and place your order before it's too late. 🕷️</p>`],
+      ['blog-11-simex','blog-11-simex','22 octubre, 2025','22 October, 2025','Evento','Event','¡Feria SIMEX & CYL · 20% de descuento!','SIMEX & CYL Fair · 20% off!',
+        `<p><strong>Miércoles 22 de octubre de 2025 · 10:30 · IES Ribera de Castilla</strong></p><p>¡Celebramos el primer encuentro de SIMEX &amp; CYL del 22 de octubre de 2025! Aprovecha un <strong>20% de descuento</strong> en los siguientes productos:</p><ul><li>Pack de merchandising: ahora a 18,72&nbsp;€ (20% ya incluido)</li><li>Portafolios de madera: ahora a 8,48&nbsp;€ (20% ya incluido)</li><li>Maleta: ahora a 108,00&nbsp;€ (20% ya incluido)</li><li>Taza: ahora a 4,60&nbsp;€ (20% ya incluido)</li></ul><p>Y lo mejor de todo: el resto de la tienda al 10% durante la <strong>Feria Internacional de Empresas Simuladas 2025</strong>. <strong>Personaliza con tu logo</strong> y sorprende a tus clientes con detalles únicos. Calidad, variedad y grandes descuentos, ¡todo al alcance de tu mano!</p><p>La empresa <strong>Riberpublic</strong> tuvo el placer de participar en este evento empresarial, donde dimos a conocer nuestros productos y servicios especializados en merchandising corporativo y promocional, compartiendo espacio con la empresa Kit Home Muebles.</p>`,
+        `<p><strong>Wednesday 22 October 2025 · 10:30 · IES Ribera de Castilla</strong></p><p>We're celebrating the first SIMEX &amp; CYL meeting on 22 October 2025! Enjoy <strong>20% off</strong> the following products:</p><ul><li>Merchandising pack: now €18.72 (20% already included)</li><li>Wooden portfolios: now €8.48 (20% already included)</li><li>Suitcase: now €108.00 (20% already included)</li><li>Mug: now €4.60 (20% already included)</li></ul><p>And best of all: the rest of the shop at 10% off during the <strong>2025 International Fair of Simulated Companies</strong>. <strong>Customise with your logo</strong> and surprise your clients with unique details. Quality, variety and great discounts, all within your reach!</p><p><strong>Riberpublic</strong> was pleased to take part in this business event, where we showcased our products and services specialised in corporate and promotional merchandising, sharing the space with Kit Home Muebles.</p>`],
+      ['blog-12-internacional','blog-12-internacional','1 abril, 2025','1 April, 2025','Evento','Event','¡Feria Internacional de empresas simuladas! · 30%','International Fair of Simulated Companies! · 30%',
+        `<p>Aprovecha un <strong>30% de descuento</strong> en toda nuestra tienda online durante la <strong>Feria Internacional de Empresas Simuladas 2025</strong>. Solo usa el código <strong>#FERIA</strong> y obtén grandes ahorros en productos diseñados especialmente para negocios como el tuyo.</p><p>✨ <strong>Personaliza con tu logo</strong> y sorprende a tus clientes con detalles únicos. Calidad, variedad y grandes descuentos, ¡todo al alcance de tu mano!</p><p>⏳ <strong>Oferta por tiempo limitado</strong>: disponible solo hasta el 8 de abril de 2025. No dejes pasar esta oportunidad, ¡compra ahora y ahorra! 🚀</p>`,
+        `<p>Enjoy <strong>30% off</strong> across our entire online shop during the <strong>2025 International Fair of Simulated Companies</strong>. Just use the code <strong>#FERIA</strong> and get great savings on products designed especially for businesses like yours.</p><p>✨ <strong>Customise with your logo</strong> and surprise your clients with unique details. Quality, variety and great discounts, all within your reach!</p><p>⏳ <strong>Limited-time offer</strong>: available only until 8 April 2025. Don't miss this chance — buy now and save! 🚀</p>`],
+      ['blog-13-carnaval','blog-13-carnaval','26 febrero, 2025','26 February, 2025','Oferta','Offer','¡Celebra el Carnaval con estilo y descuento!','Celebrate Carnival with style and savings!',
+        `<p>El carnaval está a la vuelta de la esquina y, ¿qué mejor manera de celebrarlo que con un increíble descuento? 🛍️ Este año hemos preparado una oferta especial para que disfrutes de la fiesta al máximo. ¡Te traemos un <strong>20% de descuento</strong> en todos los pedidos mínimos realizados desde nuestra web! 🎉</p><p>Desde servicios de análisis de empresa hasta agendas o bolsas de tela, puedes hacer tus compras con un gran ahorro. Pero ojo, ¡esta promoción solo estará disponible hasta el 5 de marzo! Así que no pierdas la oportunidad de conseguir lo que necesitas para vivir el carnaval al máximo, ¡y a un precio espectacular! 🥳</p>`,
+        `<p>Carnival is just around the corner, and what better way to celebrate it than with an amazing discount? 🛍️ This year we've prepared a special offer so you can enjoy the party to the fullest. We bring you <strong>20% off</strong> all minimum orders placed through our website! 🎉</p><p>From company analysis services to planners or cloth bags, you can shop with big savings. But watch out — this promotion is only available until 5 March! So don't miss the chance to get what you need to live Carnival to the max, and at a spectacular price! 🥳</p>`],
+      ['blog-14-amor2025','blog-14-amor2025','12 febrero, 2025','12 February, 2025','Oferta','Offer','¡Celebra el amor con 20% de descuento!','Celebrate love with 20% off!',
+        `<p>¡Celebra el amor con Riberpublic este San Valentín! 💖</p><p>Este 14 de febrero, la empresa Riberpublic tiene una promoción muy especial para ti. Aprovecha un <strong>20% de descuento en todos nuestros productos</strong> y regala a tus seres queridos algo único. Ya sea que busques un detalle especial o quieras consentir a alguien con uno de nuestros productos, esta es la oportunidad perfecta.</p><p>🎁 ¿Qué esperas? No dejes pasar esta oferta exclusiva que solo estará disponible durante el mes de febrero.</p><p>Recuerda, el amor se celebra en cada detalle, ¡y nosotros estamos aquí para ayudarte a hacerlo aún más especial!</p>`,
+        `<p>Celebrate love with Riberpublic this Valentine's Day! 💖</p><p>This 14 February, Riberpublic has a very special promotion for you. Enjoy <strong>20% off all our products</strong> and give your loved ones something unique. Whether you're looking for a special detail or want to treat someone with one of our products, this is the perfect opportunity.</p><p>🎁 What are you waiting for? Don't miss this exclusive offer, available only during February.</p><p>Remember, love is celebrated in every detail, and we're here to help you make it even more special!</p>`],
+      ['blog-15-empleada','blog-15-empleada','27 enero, 2025','27 January, 2025','Equipo','Team','La empleada del mes','Employee of the month',
+        `<h2>¡Empleada del Mes de Enero 2025!</h2><p>En Riberpublic, estamos emocionados de anunciar a nuestra <strong>Empleada del Mes de Enero 2025</strong>, <strong>Alexa</strong>. Su dedicación, actitud positiva y compromiso con la excelencia la han destacado como un verdadero ejemplo para todos nosotros.</p><p>Desde que Alexa se unió a Riberpublic, ha demostrado un nivel de dedicación excelente. Lo que realmente la distingue es su habilidad para mantener una actitud positiva, incluso en los momentos más difíciles, y su disposición para ayudar a sus compañeros.</p><p>En nombre de todo el equipo de Riberpublic, queremos agradecerte por tu increíble trabajo, compromiso y dedicación. ¡Felicidades por este merecido reconocimiento como Empleada del Mes!</p>`,
+        `<h2>Employee of the Month — January 2025!</h2><p>At Riberpublic, we're thrilled to announce our <strong>Employee of the Month for January 2025</strong>, <strong>Alexa</strong>. Her dedication, positive attitude and commitment to excellence have made her a true example for us all.</p><p>Since Alexa joined Riberpublic, she has shown an excellent level of dedication. What really sets her apart is her ability to keep a positive attitude, even in the toughest moments, and her willingness to help her colleagues.</p><p>On behalf of the whole Riberpublic team, we want to thank you for your incredible work, commitment and dedication. Congratulations on this well-deserved recognition as Employee of the Month!</p>`],
+      ['blog-16-hechizo','blog-16-hechizo','20 enero, 2025','20 January, 2025','Campaña','Campaign','Érase una vez… El Hechizo Invernal de Riberpublic','Once upon a time\u2026 Riberpublic\u2019s Winter Spell',
+        `<p>En Riberpublic, este invierno hemos decidido dar un toque mágico a nuestras rebajas y aportar algo totalmente novedoso. Nos complace presentar nuestra <em>Campaña de Rebajas de Invierno</em>, que se despliega a través de un cuento fascinante: <em>El Hechizo Invernal de Riberpublic</em>. Un relato encantado en el que cada capítulo desvela un descuento único y exclusivo en diferentes artículos.</p><h3>¿En qué consiste la campaña?</h3><p>Cada día hasta el 31 de enero, el Hechizo se va desvelando lentamente, revelando secretos de ahorro que solo los más curiosos podrán descubrir. En este cuento, los descuentos no son simples promociones, sino hechizos que afectan a distintos productos de nuestra tienda. Desde bolígrafos que trazan historias hasta velas que iluminan cada hogar con un 10% menos, los descuentos brindan magia a cada uno de nuestros compradores. Y eso es solo el comienzo…</p><p>Cada capítulo es una nueva sorpresa que se despliega, transformando cada compra en un viaje fascinante. El hechizo está diseñado para que cada artículo y cada descuento encaje a la perfección, haciendo de esta campaña una experiencia única e inolvidable.</p><h3>¿Te atreves a descubrir el próximo capítulo?</h3><p>No te pierdas la oportunidad de ser parte de esta historia mágica. Entra en nuestras redes sociales y sigue el rastro de descuentos que irán desvelándose poco a poco. Este invierno, en Riberpublic, el hechizo no ha hecho más que empezar.</p>`,
+        `<p>At Riberpublic, this winter we've decided to add a magical touch to our sale and bring something completely new. We're pleased to present our <em>Winter Sale Campaign</em>, which unfolds through a fascinating tale: <em>Riberpublic's Winter Spell</em>. An enchanted story in which each chapter reveals a unique, exclusive discount on different items.</p><h3>What does the campaign involve?</h3><p>Each day until 31 January, the Spell is slowly revealed, uncovering saving secrets that only the most curious will discover. In this tale, the discounts aren't simple promotions but spells affecting different products in our shop. From pens that trace stories to candles that light up every home with 10% off, the discounts bring magic to each of our shoppers. And that's only the beginning…</p><p>Each chapter is a new surprise that unfolds, turning every purchase into a fascinating journey. The spell is designed so every item and every discount fits perfectly, making this campaign a unique, unforgettable experience.</p><h3>Dare to discover the next chapter?</h3><p>Don't miss the chance to be part of this magical story. Visit our social media and follow the trail of discounts revealed little by little. This winter, at Riberpublic, the spell has only just begun.</p>`],
+      ['blog-17-rebajasrbp','blog-17-rebajasrbp','20 enero, 2025','20 January, 2025','Oferta','Offer','Rebajas de Riberpublic','Riberpublic sale',
+        `<h3>¡¡No pierdas la oportunidad!!</h3><p>Las <strong>rebajas de invierno</strong> de Riberpublic solo estarán disponibles hasta el <strong>31 de enero</strong>, ¡así que aprovecha estos descuentos mientras duran! Visítanos en nuestra tienda online y consigue todos estos productos al mejor precio. Si estás buscando una forma de hacer tus compras más sostenibles, ¡esta es tu oportunidad!</p><p><strong>¡Haz que tu invierno sea más ecológico y ahorra con Riberpublic!</strong></p><h3>Rebajas de invierno con hasta un 50% de descuento</h3><p>¡Las rebajas de invierno de Riberpublic ya están aquí! Aprovecha hasta un <strong>50% de descuento</strong> en una amplia selección de productos ecológicos y sostenibles. Es el momento perfecto para hacer compras inteligentes y responsables con el medio ambiente.</p><p><strong>Productos en oferta:</strong> análisis de mercado y proyectos personalizados; bolsas de tela, bolsas de papel y tazas ecológicas, entre otros.</p>`,
+        `<h3>Don't miss the chance!</h3><p>Riberpublic's <strong>winter sale</strong> is only available until <strong>31 January</strong>, so make the most of these discounts while they last! Visit our online shop and get all these products at the best price. If you're looking for a way to make your shopping more sustainable, this is your chance!</p><p><strong>Make your winter greener and save with Riberpublic!</strong></p><h3>Winter sale with up to 50% off</h3><p>Riberpublic's winter sale is here! Enjoy up to <strong>50% off</strong> a wide selection of eco-friendly, sustainable products. It's the perfect time to shop smart and responsibly with the environment.</p><p><strong>Products on offer:</strong> market analysis and custom projects; cloth bags, paper bags and eco-friendly mugs, among others.</p>`],
+      ['blog-18-feria2024','blog-18-feria2024','29 noviembre, 2024','29 November, 2024','Evento','Event','Nuestra experiencia en la Feria Virtual','Our experience at the Virtual Fair',
+        `<p>El 28 de noviembre participamos en la Virtual SEFED, una experiencia enriquecedora que conectó a empresas simuladas de todo el mundo. Este evento nos brindó la oportunidad de sumergirnos en un entorno empresarial global, donde pudimos poner en práctica nuestras habilidades y conocimientos adquiridos en el aula.</p><p>La jornada estuvo marcada por el dinamismo y la interacción. Presentamos y vendimos los productos del catálogo actualizado de Riberpublic, demostrando nuestro compromiso y profesionalismo en cada negociación. Además, tuvimos el honor de concretar una compra a una empresa simulada de Bulgaria, destacando la importancia del análisis estratégico en la adquisición de bienes y servicios. Por otro lado, logramos cerrar una importante venta a una empresa simulada de Brasil, un gran logro en nuestra misión de expandir las operaciones a nivel internacional.</p><p>Nuestra participación no solo implicó transacciones comerciales, sino también el fortalecimiento de habilidades clave como la negociación, la gestión de presupuestos y la toma de decisiones en tiempo real. Esta experiencia nos permitió trabajar en equipo de manera eficiente y establecer contactos con otras empresas simuladas, consolidando redes de colaboración a nivel global.</p>`,
+        `<p>On 28 November we took part in Virtual SEFED, an enriching experience that connected practice enterprises from around the world. This event gave us the chance to immerse ourselves in a global business setting, where we could put into practice the skills and knowledge gained in the classroom.</p><p>The day was marked by dynamism and interaction. We presented and sold products from Riberpublic's updated catalogue, showing our commitment and professionalism in every negotiation. We also had the honour of completing a purchase from a practice enterprise in Bulgaria, highlighting the importance of strategic analysis when acquiring goods and services. We also closed an important sale to a practice enterprise in Brazil, a great achievement in our mission to expand operations internationally.</p><p>Our participation involved not only commercial transactions but also strengthening key skills such as negotiation, budget management and real-time decision-making. This experience let us work as a team efficiently and build contacts with other practice enterprises, consolidating collaboration networks worldwide.</p>`],
+      ['blog-19-podcast','blog-19-podcast','25 noviembre, 2024','25 November, 2024','Contenido','Content','PEN Worldwide Podcast','PEN Worldwide Podcast',
+        `<p>Con el fin de ampliar el contenido de las redes sociales, se nos ocurrió realizar vídeos con formato podcast. ¿Y qué mejor ocasión que el vídeo para la feria virtual #virtualsefednov24?</p><p>Con dicha idea pretendíamos aumentar la conexión con la audiencia, conseguir mayor alcance y viralización, aumentar la versatilidad del contenido, incrementar la interacción y fidelización, y facilitar el consumo del contenido.</p><p>Tras la elección del estilo de grabación, decidimos la organización del cuerpo del diálogo, formado por dos interlocutores: el primero es el entrevistador del podcast y el segundo, un invitado representante de Riberpublic. El interlocutor plantea dos cuestiones referentes a los beneficios y las características de las empresas simuladas; el invitado responde y anima a los espectadores a trabajar en este tipo de empresas.</p><p>Creemos que es una propuesta muy atractiva, a la vez que clara, y que refleja a la perfección las ventajas de trabajar en una empresa simulada para la formación integral en los departamentos del ámbito administrativo.</p><p>En cuanto a la edición, se realizó con CapCut. Primero grabamos las imágenes, después el audio y, posteriormente, cuadramos las imágenes, la introducción y los clips de oficina con el audio del podcast. Como el contenido se grabó en español y debía subirse en inglés, utilizamos la inteligencia artificial a través de Rask AI, que tradujo el audio al instante.</p>`,
+        `<p>To expand our social media content, we came up with the idea of making podcast-format videos. And what better occasion than the video for the #virtualsefednov24 virtual fair?</p><p>With this idea we aimed to increase our connection with the audience, achieve greater reach and virality, boost content versatility, increase interaction and loyalty, and make the content easier to consume.</p><p>After choosing the recording style, we decided on the structure of the dialogue, made up of two speakers: the first is the podcast host and the second a guest representing Riberpublic. The host poses two questions about the benefits and features of practice enterprises; the guest answers and encourages viewers to work in this kind of company.</p><p>We think it's a very appealing yet clear proposal that perfectly reflects the advantages of working in a practice enterprise for well-rounded training across administrative departments.</p><p>As for editing, it was done with CapCut. First we recorded the footage, then the audio, and afterwards we matched the footage, intro and office clips to the podcast audio. Since the content was recorded in Spanish and had to be uploaded in English, we used artificial intelligence through Rask AI, which translated the audio instantly.</p>`],
+      ['blog-20-week2','blog-20-week2','21 noviembre, 2024','21 November, 2024','Evento','Event','PEN Entrepreneurship Week 2','PEN Entrepreneurship Week 2',
+        `<p>En el último post os contábamos que estamos participando en la PEN Entrepreneurship Week 2024. Se trata de una competición en redes sociales organizada por la Red de Empresas Simuladas (PEN Worldwide). Este evento anual, programado durante la Semana Global del Emprendimiento 2024, se centra en el tema “De la Empresa Simulada a la Carrera de Tus Sueños”, destacando cómo la participación en una Empresa Simulada puede guiar a los estudiantes a descubrir sus carreras ideales y a desarrollar habilidades útiles para su futuro.</p><p>Para participar, hay que crear un vídeo de entre 20 y 90 segundos en el que respondamos a dos preguntas:</p><ul><li>¿Cómo puede la Empresa Simulada ayudarte a encontrar tu futura carrera soñada?</li><li>¿Qué habilidades adquiridas en la Empresa Simulada te beneficiarán en el futuro?</li></ul><p>Es necesario publicar el vídeo en redes sociales, y todo el contenido debe estar en inglés.</p><p>Para este vídeo recurrimos a la IA para investigar hasta dónde podía llegar en este tipo de tareas creativas. En primer lugar, le dimos un prompt a ChatGPT explicándole las condiciones de la competición y le pedimos que sugiriese cómo crear un vídeo emotivo.</p>`,
+        `<p>In our last post we told you we're taking part in PEN Entrepreneurship Week 2024. It's a social-media competition organised by the Practice Enterprise Network (PEN Worldwide). This annual event, scheduled during Global Entrepreneurship Week 2024, focuses on the theme “From the Practice Enterprise to Your Dream Career”, highlighting how taking part in a Practice Enterprise can guide students to discover their ideal careers and develop useful skills for their future.</p><p>To take part, you have to create a video between 20 and 90 seconds answering two questions:</p><ul><li>How can the Practice Enterprise help you find your future dream career?</li><li>What skills gained in the Practice Enterprise will benefit you in the future?</li></ul><p>The video must be posted on social media, and all content must be in English.</p><p>For this video we turned to AI to research how far it could go in this kind of creative task. First, we gave ChatGPT a prompt explaining the competition's rules and asked it to suggest how to create an emotional video.</p>`],
+      ['blog-21-week1','blog-21-week1','20 noviembre, 2024','20 November, 2024','Evento','Event','PEN Entrepreneurship Week 1','PEN Entrepreneurship Week 1',
+        `<p>La Semana del Emprendimiento <strong>PEN Entrepreneurship Week 2024</strong> es una competición en redes sociales organizada por la Red de Empresas Simuladas (PEN Worldwide). Este evento anual, programado durante la Semana Global del Emprendimiento 2024, se centra en el tema “De la Empresa Simulada a la Carrera de Tus Sueños”, destacando cómo la participación en una Empresa Simulada puede guiar a los estudiantes a descubrir sus carreras ideales.</p><p>Para participar, hay que crear un vídeo de entre 20 y 90 segundos en el que respondamos a dos preguntas:</p><ul><li>¿Cómo puede la Empresa Simulada ayudarte a encontrar tu futura carrera soñada?</li><li>¿Qué habilidades adquiridas en la Empresa Simulada te beneficiarán en el futuro?</li></ul><p>Es necesario publicar el vídeo en redes sociales, y todo el contenido debe estar en inglés. En primer lugar, hemos usado una plantilla de Canva EDU para mostrar una conversación en línea entre dos amigas.</p><p><a href="https://youtube.com/shorts/TFHTcV9aOnw" target="_blank" rel="noopener">▶ Ver el vídeo en YouTube</a></p>`,
+        `<p>The <strong>PEN Entrepreneurship Week 2024</strong> is a social-media competition organised by the Practice Enterprise Network (PEN Worldwide). This annual event, scheduled during Global Entrepreneurship Week 2024, focuses on the theme “From the Practice Enterprise to Your Dream Career”, highlighting how taking part in a Practice Enterprise can guide students to discover their ideal careers.</p><p>To take part, you have to create a video between 20 and 90 seconds answering two questions:</p><ul><li>How can the Practice Enterprise help you find your future dream career?</li><li>What skills gained in the Practice Enterprise will benefit you in the future?</li></ul><p>The video must be posted on social media, and all content must be in English. First, we used a Canva EDU template to show an online conversation between two friends.</p><p><a href="https://youtube.com/shorts/TFHTcV9aOnw" target="_blank" rel="noopener">▶ Watch the video on YouTube</a></p>`],
+      ['blog-22-riberhalloween','blog-22-riberhalloween','24 octubre, 2024','24 October, 2024','Evento','Event','RiberHalloween','RiberHalloween',
+        `<p>¿Estás listo para una experiencia aterradora y divertida? Este año te retamos a resolver nuestros enigmas y encontrar la <strong>palabra clave oculta</strong> en nuestro Genial.ly.</p><p><strong>¿El desafío?</strong> Sumérgete en el Halloween Escape y descifra la palabra oculta. Quienes lo logren obtendrán <strong>grandes recompensas</strong>:</p><ul><li><strong>Para empresas simuladas:</strong> ¡un <strong>20% de descuento</strong> en tu próximo pedido si introduces la palabra clave al comprar! (válido hasta el 15 de noviembre)</li><li><strong>Para alumnos del IES Ribera de Castilla:</strong> si resuelves el enigma, ¡te llevas una chuche para celebrar!</li></ul><p>📅 <strong>Fecha del evento:</strong> 30 de octubre, durante el recreo, en la sede de Riberpublic.<br>📲 <strong>Acceso online:</strong> <a href="https://view.genially.com/67111c9c3491c2edf8cf00d3" target="_blank" rel="noopener">Halloween Escape</a></p><p><strong>¡Importante!</strong> Para canjear el premio, las empresas simuladas deben incluir la palabra clave en el pedido que realicen con nosotros antes del 15 de noviembre. ¡No te quedes fuera y vive una experiencia espeluznante!</p>`,
+        `<p>Are you ready for a scary, fun experience? This year we challenge you to solve our puzzles and find the <strong>hidden keyword</strong> in our Genial.ly.</p><p><strong>The challenge?</strong> Dive into the Halloween Escape and crack the hidden word. Those who succeed will get <strong>great rewards</strong>:</p><ul><li><strong>For practice enterprises:</strong> a <strong>20% discount</strong> on your next order if you enter the keyword at checkout! (valid until 15 November)</li><li><strong>For IES Ribera de Castilla students:</strong> solve the puzzle and get a sweet treat to celebrate!</li></ul><p>📅 <strong>Event date:</strong> 30 October, during break, at the Riberpublic premises.<br>📲 <strong>Online access:</strong> <a href="https://view.genially.com/67111c9c3491c2edf8cf00d3" target="_blank" rel="noopener">Halloween Escape</a></p><p><strong>Important!</strong> To redeem the prize, practice enterprises must include the keyword in the order they place with us before 15 November. Don't be left out and live a spine-chilling experience!</p>`],
+      ['blog-23-talento','blog-23-talento','27 abril, 2017','27 April, 2017','Empleo','Careers','Riberpublic busca talento','Riberpublic is looking for talent',
+        `<p>En nuestra empresa simulada estamos llevando a cabo una oferta laboral para dos puestos: <strong>Auxiliar Contable</strong> y <strong>Community Manager</strong>. Buscamos personas motivadas, con ganas de aprender y aportar su creatividad e iniciativa.</p><h3>Requisitos para ambos puestos</h3><ul><li>Capacidad de aprendizaje.</li><li>Experiencia mínima de un año en puesto similar.</li><li>Titulación acorde al puesto.</li><li>Actitud proactiva y motivación.</li></ul><h3>Beneficios de trabajar con nosotros</h3><ul><li>Contrato a tiempo completo e indefinido.</li><li>Horario flexible que se adapta a tus necesidades.</li><li>40 días naturales de vacaciones.</li><li>Ambiente de trabajo dinámico y buen rollo asegurado.</li></ul><h3>¿Te interesa formar parte del equipo?</h3><p>Envíanos tu CV a <strong>riberpublic.sefed@gmail.com</strong> y cuéntanos por qué deberíamos contar contigo.</p><p><strong>¡Atención, empresas simuladas y alumnado de FOL!</strong> Queremos extender esta experiencia a otros. Si eres parte de otra empresa simulada o un estudiante de FOL interesado, te invitamos a participar en todo el proceso de selección, desde la presentación de candidaturas hasta la entrevista final. Es una oportunidad perfecta para aprender y ver cómo funciona el mundo de los RRHH de cerca.</p>`,
+        `<p>At our practice enterprise we're running a job opening for two roles: <strong>Accounting Assistant</strong> and <strong>Community Manager</strong>. We're looking for motivated people, eager to learn and bring their creativity and initiative.</p><h3>Requirements for both roles</h3><ul><li>Ability to learn.</li><li>At least one year's experience in a similar role.</li><li>Qualifications matching the role.</li><li>Proactive attitude and motivation.</li></ul><h3>Benefits of working with us</h3><ul><li>Full-time, permanent contract.</li><li>Flexible hours that fit your needs.</li><li>40 calendar days of holiday.</li><li>A dynamic work environment and a great atmosphere.</li></ul><h3>Interested in joining the team?</h3><p>Send your CV to <strong>riberpublic.sefed@gmail.com</strong> and tell us why we should count on you.</p><p><strong>Attention, practice enterprises and FOL students!</strong> We want to extend this experience to others. If you're part of another practice enterprise or a FOL student who's interested, we invite you to take part in the whole selection process, from submitting applications to the final interview. It's a perfect chance to learn and see how the world of HR works up close.</p>`]
+    ];
+    const bySlug = {}; posts.forEach((p, i) => { bySlug[p[0]] = i; });
+
+    /* ---- determine current post: ?p=slug OR filename ---- */
+    let idx = 0;
+    try {
+      const qp = new URLSearchParams(location.search).get('p');
+      const base = decodeURIComponent((location.pathname.split('/').pop() || '').replace(/\.(dc\.html|html)$/i, ''));
+      if (qp && bySlug[qp] != null) idx = bySlug[qp];
+      else if (bySlug[base] != null) idx = bySlug[base];
+      else { const k = Object.keys(bySlug).find(s => base.indexOf(s) !== -1); if (k) idx = bySlug[k]; }
+    } catch (e) {}
+    const post = posts[idx];
+
+    /* ---- populate meta ---- */
+    const setTxt = (id, es, en) => { const el = document.getElementById(id); if (el) { el.textContent = es; el.setAttribute('data-es', es); el.setAttribute('data-en', en); } };
+    setTxt('rbp-bc', post[6], post[7]);
+    setTxt('rbp-cat', post[4], post[5]);
+    setTxt('rbp-title', post[6], post[7]);
+    setTxt('rbp-date', post[2], post[3]);
+    const words = post[8].replace(/<[^>]+>/g, ' ').replace(/&[a-z]+;/g, ' ').trim().split(/\s+/).length;
+    const mins = Math.max(1, Math.round(words / 200));
+    setTxt('rbp-read', mins + ' min de lectura', mins + ' min read');
+    const feat = document.getElementById('rbp-feat-img');
+    if (feat) { feat.src = 'img/' + post[1] + '.jpg'; feat.alt = post[6]; }
+
+    /* ---- body (handled separately so the lead class survives lang swaps) ---- */
+    const bodyEl = document.getElementById('rbp-body');
+    const setBody = (l) => {
+      if (!bodyEl) return;
+      bodyEl.innerHTML = l === 'en' ? post[9] : post[8];
+      const fp = bodyEl.querySelector('p');
+      if (fp) fp.classList.add('lead');
+    };
+
+    /* ---- prev / next (array is newest-first) ---- */
+    const pn = document.getElementById('rbp-prevnext');
+    const card = (i, dirES, dirEN, align) => {
+      if (i < 0 || i >= posts.length) return '<span></span>';
+      const p = posts[i];
+      return '<a href="post.html?p=' + p[0] + '" style="display:flex;flex-direction:column;gap:6px;padding:18px 20px;border:1px solid #d8e1ec;border-radius:14px;background:#fff;transition:transform .25s,box-shadow .25s,border-color .25s;text-align:' + align + '" '
+        + 'onmouseenter="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 18px 38px rgba(28,58,94,.12)\';this.style.borderColor=\'transparent\'" '
+        + 'onmouseleave="this.style.transform=\'none\';this.style.boxShadow=\'none\';this.style.borderColor=\'#d8e1ec\'">'
+        + '<span data-en="' + dirEN + '" style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9aa9bc">' + dirES + '</span>'
+        + '<span data-en="' + p[7].replace(/"/g, '&quot;') + '" style="font-family:\'Playfair Display\',serif;font-weight:700;font-size:1.02rem;color:#16314f;line-height:1.25">' + p[6] + '</span></a>';
+    };
+    if (pn) pn.innerHTML = card(idx - 1, '← Más reciente', '← Newer', 'left') + card(idx + 1, 'Más antiguo →', 'Older →', 'right');
+
+    /* ---- related (3 others) ---- */
+    const rel = document.getElementById('rbp-related');
+    if (rel) {
+      const order = []; for (let k = 1; k <= posts.length && order.length < 3; k++) order.push((idx + k) % posts.length);
+      order.forEach(i => {
+        const p = posts[i];
+        const a = document.createElement('article');
+        a.style.cssText = 'background:#fff;border:1px solid #d8e1ec;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s';
+        a.innerHTML =
+          '<a href="post.html?p=' + p[0] + '" style="position:relative;aspect-ratio:16/10;overflow:hidden;display:block;background:linear-gradient(140deg,#1c3a5e,#2d5481)"><img src="img/' + p[1] + '.jpg" alt="' + p[6].replace(/"/g, '&quot;') + '" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s"></a>'
+          + '<div style="padding:22px 22px 26px;display:flex;flex-direction:column;flex:1">'
+          + '<div data-es="' + p[2] + '" data-en="' + p[3] + '" style="font-size:.74rem;color:#9aa9bc;margin-bottom:8px">' + p[2] + '</div>'
+          + '<h3 style="font-family:\'Playfair Display\',serif;font-weight:800;font-size:1.16rem;color:#16314f;margin-bottom:14px;line-height:1.22"><a href="post.html?p=' + p[0] + '" data-en="' + p[7].replace(/"/g, '&quot;') + '" style="color:#16314f">' + p[6] + '</a></h3>'
+          + '<a href="post.html?p=' + p[0] + '" data-en="Read more →" style="margin-top:auto;font-weight:600;font-size:.85rem;color:#1c3a5e;display:inline-flex;gap:6px;align-items:center">Leer más →</a>'
+          + '</div>';
+        const im = a.querySelector('img');
+        a.addEventListener('mouseenter', () => { a.style.transform = 'translateY(-6px)'; a.style.boxShadow = '0 22px 46px rgba(28,58,94,.14)'; a.style.borderColor = 'transparent'; if (im) im.style.transform = 'scale(1.06)'; });
+        a.addEventListener('mouseleave', () => { a.style.transform = 'none'; a.style.boxShadow = 'none'; a.style.borderColor = '#d8e1ec'; if (im) im.style.transform = 'none'; });
+        rel.appendChild(a);
+      });
+    }
+
+    /* ---- share links ---- */
+    const url = location.href;
+    const wa = document.getElementById('rbp-sh-wa'); if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(post[6] + ' — ' + url);
+    const tw = document.getElementById('rbp-sh-x'); if (tw) tw.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(post[6]) + '&url=' + encodeURIComponent(url);
+
+    /* ---- bilingual ES/EN ---- */
+    const label = document.getElementById('rbp-lang-label');
+    let lang = 'es';
+    try { lang = localStorage.getItem('rbp-lang') || 'es'; } catch (e) {}
+    const applyLang = (l) => {
+      root.querySelectorAll('[data-en]').forEach(n => {
+        if (!n.hasAttribute('data-es')) n.setAttribute('data-es', n.innerHTML);
+        n.innerHTML = l === 'en' ? n.getAttribute('data-en') : n.getAttribute('data-es');
+      });
+      root.querySelectorAll('[data-en-ph]').forEach(n => {
+        if (!n.hasAttribute('data-es-ph')) n.setAttribute('data-es-ph', n.getAttribute('placeholder') || '');
+        n.setAttribute('placeholder', l === 'en' ? n.getAttribute('data-en-ph') : n.getAttribute('data-es-ph'));
+      });
+      setBody(l);
+      if (label) label.textContent = l === 'en' ? 'ES' : 'EN';
+      const mail = document.getElementById('rbp-sh-mail');
+      if (mail) mail.href = 'mailto:?subject=' + encodeURIComponent((l === 'en' ? post[7] : post[6])) + '&body=' + encodeURIComponent(url);
+      try { document.documentElement.lang = l; } catch (e) {}
+      try { document.title = (l === 'en' ? post[7] : post[6]) + ' · Riberpublic SLS'; } catch (e) {}
+      try { localStorage.setItem('rbp-lang', l); } catch (e) {}
+    };
+    applyLang(lang);
+    const btn = document.getElementById('rbp-lang');
+    if (btn) btn.addEventListener('click', () => { lang = lang === 'es' ? 'en' : 'es'; applyLang(lang); });
+
+    /* ---- sticky header ---- */
+    const header = document.getElementById('rbp-header');
+    const onScrollHeader = () => {
+      if (!header) return;
+      if (scrollY > 40) { header.style.background = 'rgba(28,58,94,.92)'; header.style.backdropFilter = 'saturate(140%) blur(10px)'; header.style.boxShadow = '0 6px 30px rgba(19,42,71,.22)'; }
+      else { header.style.background = 'rgba(28,58,94,0)'; header.style.backdropFilter = 'none'; header.style.boxShadow = 'none'; }
+    };
+    onScrollHeader();
+    addEventListener('scroll', onScrollHeader, { passive: true });
+
+    /* ---- reveals ---- */
+    const reveals = root.querySelectorAll('[data-reveal]');
+    reveals.forEach(el => {
+      if (reduce) return;
+      const d = parseInt(el.getAttribute('data-delay') || '0', 10);
+      el.style.opacity = '0'; el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity .75s cubic-bezier(.22,.61,.36,1) ' + d + 'ms, transform .75s cubic-bezier(.22,.61,.36,1) ' + d + 'ms';
+    });
+    if (!reduce && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((ents) => { ents.forEach(x => { if (x.isIntersecting) { x.target.style.opacity = '1'; x.target.style.transform = 'none'; io.unobserve(x.target); } }); }, { threshold: 0.05, rootMargin: '0px 0px -8% 0px' });
+      reveals.forEach(el => io.observe(el));
+    }
+
+    /* ---- parallax shapes ---- */
+    const shapes = root.querySelectorAll('[data-parallax]');
+    let ticking = false;
+    const parallax = () => { const y = scrollY; shapes.forEach(s => { const sp = parseFloat(s.getAttribute('data-parallax')) || 0.2; s.style.transform = 'translateY(' + (y * sp * -1) + 'px)'; }); ticking = false; };
+    if (!reduce) { addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(parallax); ticking = true; } }, { passive: true }); parallax(); }
+
+    /* ---- subscribe ---- */
+    const sub = document.getElementById('rbp-sub');
+    if (sub) sub.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = sub.querySelector('input[type=email]');
+      const email = (input && input.value || '').trim();
+      const b = sub.querySelector('button');
+      let KEY = '';
+      try { const m = await import('./rbp-config.js'); KEY = (m.WEB3FORMS_KEY || '').trim(); } catch (e2) {}
+      const mailtoFallback = () => {
+        const subject = encodeURIComponent(lang === 'en' ? 'Newsletter sign-up' : 'Alta en la newsletter');
+        const body = encodeURIComponent((lang === 'en' ? 'I would like to subscribe with: ' : 'Quiero suscribirme con el correo: ') + email);
+        window.location.href = 'mailto:riberpublic.sefed@gmail.com?subject=' + subject + '&body=' + body;
+      };
+      if (KEY) {
+        if (b) { b.disabled = true; b.textContent = lang === 'en' ? 'Sending…' : 'Enviando…'; }
+        try {
+          const fd = new FormData();
+          fd.append('access_key', KEY);
+          fd.append('email', email);
+          fd.append('subject', 'Nueva suscripción — Riberpublic');
+          fd.append('from_name', 'Riberpublic · Newsletter');
+          const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Accept': 'application/json' }, body: fd });
+          const d = await r.json();
+          if (!d || !d.success) throw new Error();
+          sub.reset();
+          if (b) { b.disabled = false; b.textContent = lang === 'en' ? 'Subscribed!' : '¡Suscrito!'; }
+        } catch (e3) {
+          if (b) { b.disabled = false; b.textContent = lang === 'en' ? 'Subscribe' : 'Suscribirme'; }
+          mailtoFallback();
+        }
+      } else { mailtoFallback(); if (b) b.textContent = lang === 'en' ? 'Opening email…' : 'Abriendo correo…'; }
+    });
+  }
+}
+</script>
+</body>
+</html>
