@@ -366,7 +366,7 @@
   }
 
   // src/compile.ts
-  function collectProps(node, kind, host) {
+  function collectProps(node, isComponent, host) {
     const propGetters = [];
     const pseudoClasses = [];
     let hintSize = null;
@@ -383,9 +383,8 @@
         pseudoClasses.push(host.pseudoClass(key.slice(6), value));
         continue;
       }
-      if (kind !== "dom") {
-        if (key.includes("-") && !(kind === "x-import" && (key.startsWith("aria-") || key.startsWith("data-"))))
-          key = kebabToCamel(key);
+      if (isComponent) {
+        if (key.includes("-")) key = kebabToCamel(key);
       } else {
         if (key === "class") key = "className";
         else if (key === "for") key = "htmlFor";
@@ -556,7 +555,7 @@
     const styleRaw = el.getAttribute("style");
     el.removeAttribute("style");
     const styleGet = styleRaw != null ? compileAttr(styleRaw) : null;
-    const { propGetters, hintSize } = collectProps(el, "dc-import", host);
+    const { propGetters, hintSize } = collectProps(el, true, host);
     const kids = walkChildren(el, host);
     return (vals, ctx, key) => {
       const props = {
@@ -565,14 +564,7 @@
         __tplId: tplId,
         __hostStyle: styleGet ? hostPositionStyle(styleGet(vals)) : void 0
       };
-      for (const [k, g] of propGetters) {
-        const v = g(vals);
-        if (k === "dcProps") {
-          if (v && typeof v === "object") Object.assign(props, v);
-          continue;
-        }
-        props[k] = v;
-      }
+      for (const [k, g] of propGetters) props[k] = g(vals);
       if (kids.length) props.children = kids.map((b, j) => b(vals, ctx, j));
       return h(host.component(name), props);
     };
@@ -591,7 +583,7 @@
     el.removeAttribute("style");
     const styleGet = styleRaw != null ? compileAttr(styleRaw) : null;
     const wrap = tplId != null || styleGet != null;
-    const { propGetters, hintSize } = collectProps(el, "x-import", host);
+    const { propGetters, hintSize } = collectProps(el, true, host);
     const hasContent = el.children.length > 0 || !!(el.textContent || "").trim();
     const kids = hasContent ? walkChildren(el, host) : [];
     const urlBindable = url.includes("{{");
@@ -625,15 +617,11 @@
       const props = wrapper ? {} : { key };
       let unresolvedHole = false;
       for (const [k, g] of propGetters) {
-        if (k === "component" || k === "componentFromGlobalScope" || k === "from") {
+        if (k === "component" || k === "componentFromGlobalScope" || k === "name" || k === "from" || k === "src" || k === "import") {
           continue;
         }
         const v = g(vals);
         if (v === void 0) unresolvedHole = true;
-        if (k === "dcProps") {
-          if (v && typeof v === "object") Object.assign(props, v);
-          continue;
-        }
         props[k] = v;
       }
       if (unresolvedHole && ctx?.__htmlStreamingNow) {
@@ -652,7 +640,7 @@
   function walkElement(el, host) {
     const realTag = RAW_UNWRAP[el.localName] || el.localName;
     const tplId = el.getAttribute("data-dc-tpl");
-    const { propGetters, pseudoClasses } = collectProps(el, "dom", host);
+    const { propGetters, pseudoClasses } = collectProps(el, false, host);
     const kids = walkChildren(el, host);
     return (vals, ctx, key) => {
       const props = { key, "data-dc-tpl": tplId };
@@ -917,7 +905,7 @@
             { ...hostBase, className: cls + " sc-has-error" },
             h(
               "div",
-              { className: "sc-logic-error", "data-omelette-chrome": "" },
+              { className: "sc-logic-error" },
               this.__name + ": " + this.state.__err
             ),
             h(Placeholder, {
@@ -950,11 +938,7 @@
         return h(
           "div",
           { ...hostBase, className: cls + (renderErr ? " sc-has-error" : "") },
-          renderErr && h(
-            "div",
-            { className: "sc-logic-error", "data-omelette-chrome": "" },
-            renderErr
-          ),
+          renderErr && h("div", { className: "sc-logic-error" }, renderErr),
           h(
             AncestorContext.Provider,
             { value: [...chain, this.__name] },
