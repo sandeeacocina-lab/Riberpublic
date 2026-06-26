@@ -19,6 +19,15 @@ a{text-decoration:none;color:inherit}
 @keyframes rbp-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
 @keyframes rbp-spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:860px){
+  #rbp-header > div{height:64px !important}
+  #rbp-header nav{display:none !important}
+  #rbp-header a[href="tienda.html"]{display:none !important}
+  #rbp-mnav-btn{display:inline-flex !important}
+  #rbp-root [style*="grid-template-columns"]{grid-template-columns:1fr !important}
+  #rbp-root [data-stack]{flex-direction:column !important;align-items:stretch !important}
+}
+@media(min-width:861px){#rbp-mnav{display:none !important}}
 </style>
 </helmet>
 <div id="rbp-root" style="position:relative">
@@ -140,6 +149,35 @@ class Component extends DCLogic {
     const root = document.getElementById('rbp-root');
     if (!root) return;
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---- mobile nav (responsive) ---- */
+    (function () {
+      const row = document.querySelector('#rbp-header > div');
+      if (!row) return;
+      const actions = row.lastElementChild;
+      const burger = document.createElement('button');
+      burger.id = 'rbp-mnav-btn';
+      burger.setAttribute('aria-label', 'Menú');
+      burger.style.cssText = 'display:none;align-items:center;justify-content:center;width:42px;height:42px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);border-radius:12px;color:#fff;cursor:pointer;flex:none';
+      burger.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>';
+      if (actions) actions.appendChild(burger);
+      const ov = document.createElement('div');
+      ov.id = 'rbp-mnav';
+      ov.style.cssText = 'position:fixed;inset:0;z-index:80;background:rgba(11,22,38,.98);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:none;flex-direction:column;padding:22px 24px';
+      const links = [['index.html', 'Inicio', 'Home'], ['nosotros.html', 'Nosotros', 'About'], ['rsc.html', 'RSC', 'CSR'], ['blog.html', 'Blog', 'Blog'], ['contacto.html', 'Contacto', 'Contact'], ['tienda.html', 'Tienda', 'Shop']];
+      ov.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;height:54px">'
+        + '<img src="img/logo.png" alt="Riberpublic" style="height:38px;width:auto">'
+        + '<button id="rbp-mnav-close" aria-label="Cerrar" style="width:42px;height:42px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);border-radius:12px;color:#fff;cursor:pointer;font-size:20px;line-height:1">\u2715</button></div>'
+        + '<nav style="display:flex;flex-direction:column;margin-top:24px">'
+        + links.map(function (l) { return '<a href="' + l[0] + '" data-en="' + l[2] + '" style="color:#fff;font-family:\'Playfair Display\',Georgia,serif;font-weight:700;font-size:1.55rem;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)">' + l[1] + '</a>'; }).join('')
+        + '</nav>';
+      root.appendChild(ov);
+      const closeMnav = function () { ov.style.display = 'none'; document.body.style.overflow = ''; };
+      burger.addEventListener('click', function () { ov.style.display = 'flex'; document.body.style.overflow = 'hidden'; });
+      const mc = ov.querySelector('#rbp-mnav-close');
+      if (mc) mc.addEventListener('click', closeMnav);
+      ov.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', closeMnav); });
+    })();
 
     const nodes = root.querySelectorAll('[data-en]');
     const phNodes = root.querySelectorAll('[data-en-ph]');
