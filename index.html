@@ -23,15 +23,19 @@ a{text-decoration:none;color:inherit}
 @keyframes rbp-cue{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(9px);opacity:1}}
 @keyframes rbp-spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+#rbp-mnav-btn,#rbp-mnav{display:none !important}
+#rbp-burger{display:none;align-items:center;justify-content:center;width:42px;height:42px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);border-radius:12px;color:#fff;cursor:pointer;flex:none}
+#rbp-mtoggle{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+#rbp-mnav-css{position:fixed;inset:0;z-index:90;background:rgba(11,22,38,.98);flex-direction:column;padding:22px 24px;display:none}
+#rbp-mtoggle:checked ~ #rbp-mnav-css{display:flex}
 @media(max-width:860px){
-  #rbp-header > div{height:64px !important}
-  #rbp-header nav{display:none !important}
+  #rbp-header > div > nav{display:none !important}
   #rbp-header a[href="tienda.html"]{display:none !important}
-  #rbp-mnav-btn{display:inline-flex !important}
+  #rbp-burger{display:inline-flex !important}
   #rbp-root [style*="grid-template-columns"]{grid-template-columns:1fr !important}
   #rbp-root [data-stack]{flex-direction:column !important;align-items:stretch !important}
 }
-@media(min-width:861px){#rbp-mnav{display:none !important}}
+@media(min-width:861px){#rbp-mnav-css,#rbp-burger{display:none !important}}
 </style>
 </helmet>
 <div id="rbp-root" style="position:relative">
@@ -50,8 +54,24 @@ a{text-decoration:none;color:inherit}
     <div style="display:flex;align-items:center;gap:14px">
       <button id="rbp-lang" aria-label="Cambiar idioma" style="display:inline-flex;align-items:center;gap:6px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.06);border-radius:40px;padding:7px 14px;font-family:inherit;font-size:.72rem;font-weight:700;letter-spacing:.12em;color:#fff;cursor:pointer;transition:.25s" style-hover="background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.7)"><span style="width:7px;height:7px;border-radius:50%;background:#e7b53c;display:inline-block"></span><span id="rbp-lang-label">EN</span></button>
       <a href="tienda.html" style="border:1.5px solid rgba(255,255,255,.55);border-radius:40px;padding:9px 22px;font-size:.82rem;font-weight:600;color:#fff;transition:.25s" style-hover="background:#fff;color:#1c3a5e;border-color:#fff" data-en="Shop">Tienda</a>
+      <label id="rbp-burger" for="rbp-mtoggle" aria-label="Menú"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg></label>
     </div>
   </div>
+  <input type="checkbox" id="rbp-mtoggle" aria-hidden="true" tabindex="-1">
+  <nav id="rbp-mnav-css">
+    <div style="display:flex;justify-content:space-between;align-items:center;height:54px">
+      <img src="img/logo.png" alt="Riberpublic" style="height:38px;width:auto">
+      <label for="rbp-mtoggle" aria-label="Cerrar" style="display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1.5px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);border-radius:12px;color:#fff;cursor:pointer;font-size:20px;line-height:1">✕</label>
+    </div>
+    <div style="display:flex;flex-direction:column;margin-top:24px">
+      <a href="index.html" data-en="Home" style="color:#fff;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.55rem;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)">Inicio</a>
+      <a href="nosotros.html" data-en="About" style="color:#fff;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.55rem;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)">Nosotros</a>
+      <a href="rsc.html" data-en="CSR" style="color:#fff;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.55rem;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)">RSC</a>
+      <a href="blog.html" data-en="Blog" style="color:#fff;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.55rem;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)">Blog</a>
+      <a href="contacto.html" data-en="Contact" style="color:#fff;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.55rem;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)">Contacto</a>
+      <a href="tienda.html" data-en="Shop" style="color:#fff;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.55rem;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.12)">Tienda</a>
+    </div>
+  </nav>
 </header>
 
 <section style="position:relative;color:#fff;overflow:hidden;min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#132a47 0%,#1c3a5e 48%,#2d5481 100%)">
